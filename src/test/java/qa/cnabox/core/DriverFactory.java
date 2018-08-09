@@ -32,7 +32,7 @@ public class DriverFactory {
 			break;
 		case CHROME:
 			//System.setProperty("webdriver.chrome.driver", "/home/target/driver/chromedriver"); //Usar no Linux
-			//System.setProperty("webdriver.chrome.driver", "/driver/chromedriver.exe");
+			System.setProperty("webdriver.chrome.driver", "C:\\driver\\chromedriver.exe");
 			driver = new ChromeDriver();
 			break;
 		}
