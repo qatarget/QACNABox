@@ -1,8 +1,6 @@
 package qa.cnabox.test;
 
 import org.junit.Test;
-
-
 import qa.cnabox.page.LoginPage;
 
 public class LoginTest {
