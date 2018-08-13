@@ -1,42 +1,43 @@
 package qa.cnabox.page;
 
-import qa.cnabox.core.DSL;
+import qa.cnabox.core.BasePage;
+import static qa.cnabox.core.DriverFactory.getDriver;
 
-public class LoginPage {
+public class LoginPage extends BasePage {
 
-	private DSL dsl = new DSL();
-
-	public void url(String url) {
-		dsl.url(url);
+	public void acessarTelaInicial() {
+		getDriver().get("https://teste.cnabox.com.br");
 	}
 
-	public void setEmail(String email) {
-		dsl.escreve("Email", email);
+	public void SetEmail(String email) {
+		escreveId("Email", email);
 	}
 
-	public void setPassword(String senha) {
-		dsl.escreve("Password", senha);
+	public void SetSenha(String senha) {
+		escreveId("Password", senha);
 	}
 
-	public void setButton(String clicar_botao) {
-		dsl.clicarbotao(clicar_botao);
+	public void entrar() {
+		clicarbotao("btnLogar");
 	}
 
-	public void abrirComboBox(String abrirComboBox) {
-		dsl.abrirComboBox(abrirComboBox);
+	public void abrirComboBox() {
+		abrirComboBox("select2-EscolaId-container");
 	}
 
 	public void digitarNomeEscola(String NomeEscola) {
-		dsl.escreverNomeEscola("select2-search__field", NomeEscola);
+		escreverNomeEscola("select2-search__field", NomeEscola);
 	}
 
-	public void setResultadoEscola(String SelecionarEscola) {
-		dsl.selecionarResultadoEscola(SelecionarEscola);
+	public void setResultadoEscola() {
+		selecionarResultadoEscola("select2-results__option--highlighted");
 	}
 
-	public void acessarEscola(String btn_acessarEscola) {
-		dsl.clicarbotao(btn_acessarEscola);
+	public void acessarEscola() {
+		clicarbotao("btnTrocaEscola");
 
 	}
+	
+	
 
 }

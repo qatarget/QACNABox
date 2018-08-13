@@ -1,13 +1,12 @@
 package qa.cnabox.core;
 
-import org.openqa.selenium.Dimension;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class DriverFactory {
 
-//	private static WebDriver driver;
 	private static ThreadLocal<WebDriver> threadDriver = new ThreadLocal<WebDriver>() {
 		@Override
 		protected synchronized WebDriver initialValue() {
@@ -26,17 +25,17 @@ public class DriverFactory {
 		WebDriver driver = null;
 		switch (Propriedades.browser) {
 		case FIREFOX:
-			//System.setProperty("webdriver.gecko.driver","/home/target/driver/geckodriver"); //Usar no Linux
-			//System.setProperty("webdriver.gecko.driver", "/driver/geckodriver.exe");
+			// System.setProperty("webdriver.gecko.driver","/home/target/driver/geckodriver");// //Usar no Linux
+			System.setProperty("webdriver.gecko.driver", "/driver/geckodriver.exe");
 			driver = new FirefoxDriver();
 			break;
 		case CHROME:
-			//System.setProperty("webdriver.chrome.driver", "/home/target/driver/chromedriver"); //Usar no Linux
+			//System.setProperty("webdriver.chrome.driver", "/usr/local/bin/driver/chromedriver"); //Usar no Linux
 			System.setProperty("webdriver.chrome.driver", "C:\\driver\\chromedriver.exe");
 			driver = new ChromeDriver();
 			break;
 		}
-		driver.manage().window().setSize(new Dimension(1200, 765));
+		driver.manage().window().maximize();
 		return driver;
 	}
 
@@ -50,4 +49,5 @@ public class DriverFactory {
 			threadDriver.remove();
 		}
 	}
+
 }
