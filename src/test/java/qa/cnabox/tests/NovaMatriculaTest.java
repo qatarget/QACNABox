@@ -22,7 +22,7 @@ public class NovaMatriculaTest extends BaseTest {
 
 		getDriver().findElement(By.xpath("//div[@id='menu-lateral']/ul[@class='nav-left-bar']/li[6]/a[@href='#']/span[.='Comercial']")).click();
 		getDriver().findElement(By.xpath("//div[@id='menu-lateral']/ul[@class='nav-left-bar']/li[6]/ul[@class='sub-menu']//span[.='Atendimento']")).click();
-		Thread.sleep(1500);
+		Thread.sleep(3000);
 		getDriver().findElement(By.xpath("/html//button[@id='btnCreateNewProspect']")).click();
 		Thread.sleep(3000);
 		getDriver().findElement(By.xpath("/html//input[@id='Nome']")).sendKeys("ALUNO TESTE");
@@ -44,7 +44,7 @@ public class NovaMatriculaTest extends BaseTest {
 		getDriver().findElement(By.xpath("/html//fieldset[@id='GridCadastro']/div[4]/section[@class='col col-12']/div/label[1]/i")).click();
 		getDriver().findElement(By.xpath("/html//input[@id='Endereco_Numero']")).sendKeys(" 33 ");
 		// Comando abaixo não está funcionando. Verificar o porque.
-		((JavascriptExecutor) getDriver()).executeScript("scroll(0,600)");
+		((JavascriptExecutor) getDriver()).executeScript("scroll(0,800)");
 		Thread.sleep(3000);
 		getDriver().findElement(By.xpath("//tbody//tr[1]//td[1]//label[1]//i[1]")).click();
 		Thread.sleep(3000);
