@@ -37,7 +37,7 @@ public class BaseTest {
 		
 	}
 
-	@After
+	//@After
 	public void finaliza() throws IOException 
 	{
 		TakesScreenshot ss = (TakesScreenshot) getDriver();
