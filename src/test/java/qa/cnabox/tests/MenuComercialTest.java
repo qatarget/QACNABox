@@ -1,7 +1,7 @@
 package qa.cnabox.tests;
 
 import qa.cnabox.core.BaseTest;
-import qa.cnabox.page.NovaMatriculaPage;
+import qa.cnabox.page.MenuComercialPage;
 import static qa.cnabox.core.DriverFactory.getDriver;
 
 import org.junit.Test;
@@ -10,12 +10,12 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 
-public class NovaMatriculaTest extends BaseTest {
+public class MenuComercialTest extends BaseTest {
 
-	NovaMatriculaPage page = new NovaMatriculaPage();
+	MenuComercialPage page = new MenuComercialPage();
 
 	@Test
-	public void DeveRealizarNovaMatriculaPorAtendimento() throws InterruptedException {
+	public void DeveCadastrarNovoProspect() throws InterruptedException {
 
 		getDriver()
 				.findElement(By.xpath(
