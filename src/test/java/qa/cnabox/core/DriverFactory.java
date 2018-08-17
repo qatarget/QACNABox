@@ -25,13 +25,11 @@ public class DriverFactory {
 		WebDriver driver = null;
 		switch (Propriedades.browser) {
 		case FIREFOX:
-			// System.setProperty("webdriver.gecko.driver","/home/target/driver/geckodriver");// //Usar no Linux
-			System.setProperty("webdriver.gecko.driver", "/driver/geckodriver.exe");
+			//System.setProperty("webdriver.gecko.driver", "/driver/geckodriver.exe");
 			driver = new FirefoxDriver();
 			break;
 		case CHROME:
-			//System.setProperty("webdriver.chrome.driver", "/usr/local/bin/driver/chromedriver"); //Usar no Linux
-			System.setProperty("webdriver.chrome.driver", "C:\\driver\\chromedriver.exe");
+			//System.setProperty("webdriver.chrome.driver", "C:\\driver\\chromedriver.exe");
 			driver = new ChromeDriver();
 			break;
 		}
