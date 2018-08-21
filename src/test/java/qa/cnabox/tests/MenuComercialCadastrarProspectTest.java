@@ -1,7 +1,7 @@
 package qa.cnabox.tests;
 
 import qa.cnabox.core.BaseTest;
-import qa.cnabox.page.MenuComercialPage;
+import qa.cnabox.page.MenuComercialCadastrarProspectPage;
 import static qa.cnabox.core.DriverFactory.getDriver;
 
 import java.awt.AWTException;
@@ -11,9 +11,9 @@ import org.junit.Assert;
 import org.junit.Test;
 import org.openqa.selenium.By;
 
-public class MenuComercialTest extends BaseTest {
+public class MenuComercialCadastrarProspectTest extends BaseTest {
 
-	MenuComercialPage page = new MenuComercialPage();
+	MenuComercialCadastrarProspectPage page = new MenuComercialCadastrarProspectPage();
 
 //*********************************************************Cadastro de Prospect**************************************************************//
 

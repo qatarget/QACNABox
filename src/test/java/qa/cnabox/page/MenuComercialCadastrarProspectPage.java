@@ -12,7 +12,7 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 
-public class MenuComercialPage extends BasePage {
+public class MenuComercialCadastrarProspectPage extends BasePage {
 
 	public void SetClicarMenu() {
 		clicarBotaoBy(
