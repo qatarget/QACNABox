@@ -20,6 +20,7 @@ public class MenuComercialTest extends BaseTest {
 	@Test
 	public void DeveCadastrarNovoProspect() throws InterruptedException, AWTException {
 		page.SetClicarMenu();
+		page.AguardaCarregarPagina();
 		page.SetClicarSubMenu();
 		page.AguardaCarregarPagina();
 		page.SetClicarCadastrarProspect();
