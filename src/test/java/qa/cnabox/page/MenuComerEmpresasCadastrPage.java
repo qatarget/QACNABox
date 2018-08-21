@@ -35,10 +35,15 @@ public class MenuComerEmpresasCadastrPage extends BasePage {
 	 
 		clicarBotaoBy(By.cssSelector("#PessoaEscola_Nome"));
 		Thread.sleep(1000);
-		escreveTexto(By.cssSelector("PessoaEscola_Nome"), geraEmpresaAleatorio());
+		escreveTexto(By.cssSelector("PessoaEscola_Nome"), geraNomeAleatorio());
 }
 
-
+	public void SetescreverRazão () throws InterruptedException {
+		
+		clicarBotaoBy(By.cssSelector("#PessoaEscola_Apelido"));
+		Thread.sleep(1000);
+		escreveTexto(By.cssSelector("#PessoaEscola_Apelido"), geraEmpresaAleatorio() );
+	}
 
 
 }
