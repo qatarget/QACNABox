@@ -45,5 +45,5 @@ public class MenuComerEmpresasCadastrPage extends BasePage {
 		escreveTexto(By.cssSelector("#PessoaEscola_Apelido"), geraEmpresaAleatorio() );
 	}
 
-
+	public void SetescreverCNPJ () throws InterruptedException {}
 }
