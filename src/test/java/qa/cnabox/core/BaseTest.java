@@ -12,7 +12,7 @@ import org.openqa.selenium.TakesScreenshot;
 
 import qa.cnabox.page.LoginPage;
 import static qa.cnabox.core.DriverFactory.getDriver;
-import static qa.cnabox.core.DriverFactory.killDriver;
+//import static qa.cnabox.core.DriverFactory.killDriver;
 
 
 
@@ -37,7 +37,7 @@ public class BaseTest {
 		
 	}
 
-	//@After
+	@After
 	public void finaliza() throws IOException 
 	{
 		TakesScreenshot ss = (TakesScreenshot) getDriver();
@@ -46,9 +46,9 @@ public class BaseTest {
 		FileUtils.copyFile(print, new File("target" + File.separator + "screenshot" + File.separator
 				+ testName.getMethodName() +  ".jpg"));
 
-		if (Propriedades.FECHAR_BROWSER) {
-			killDriver();
+		//if (Propriedades.FECHAR_BROWSER) {
+		//	killDriver();
 		}
 	}
 
-}
+//}
