@@ -31,7 +31,7 @@ public class BaseTest {
 		page.SetSenha("teste_Target321");
 		page.entrar();
 		page.abrirComboBox();
-		page.digitarNomeEscola("ADMINISTRACAO NACIONAL CNA");
+		page.digitarNomeEscola("Vila mariana");
 		page.setResultadoEscola();
 		page.acessarEscola();
 		
