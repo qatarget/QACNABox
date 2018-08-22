@@ -97,7 +97,7 @@ public class MenuComerEmpresasCadastrPage extends BasePage {
 		
 		Select dropdown = new Select(getDriver().findElement(By.id("TipoEmpresaId")));
 		dropdown.selectByValue("3");
-		
+		Thread.sleep(1000);
 	}
 	
 	}
