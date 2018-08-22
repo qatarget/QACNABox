@@ -3,12 +3,8 @@ package qa.cnabox.page;
 import qa.cnabox.core.BasePage;
 import static qa.cnabox.core.DriverFactory.getDriver;
 
-import java.awt.Robot;
-import java.awt.event.KeyEvent;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 
@@ -62,7 +58,6 @@ public class MenuComercialCadastrarProspectPage extends BasePage {
 		WebElement element = getDriver().findElement(By.xpath("/html//select[@id='EstadoCivilId']"));
 		Select combo = new Select(element);
 		combo.selectByValue(numerocombo);
-
 	}
 
 	public void SetTelefoneCelular(String numero) {
