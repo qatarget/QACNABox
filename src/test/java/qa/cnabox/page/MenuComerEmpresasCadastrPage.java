@@ -2,9 +2,7 @@ package qa.cnabox.page;
 
 import qa.cnabox.core.BasePage;
 import static qa.cnabox.core.DriverFactory.getDriver;
-
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 
 
@@ -40,7 +38,7 @@ public class MenuComerEmpresasCadastrPage extends BasePage {
 		escreveTexto(By.cssSelector("PessoaEscola_Nome"), geraNomeAleatorio());
 }
 
-	public void SetescreverRazão () throws InterruptedException {
+	public void SetescreverRazao () throws InterruptedException {
 		
 		clicarBotaoBy(By.cssSelector("#PessoaEscola_Apelido"));
 		Thread.sleep(1000);

@@ -26,7 +26,7 @@ public class LoginPage extends BasePage {
 	}
 
 	public void digitarNomeEscola(String NomeEscola) {
-		escreverNomeEscola("select2-search__field", NomeEscola);
+		escreverClassName("select2-search__field", NomeEscola);
 	}
 
 	public void setResultadoEscola() {
