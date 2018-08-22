@@ -54,24 +54,24 @@ public class MenuComercialCadastrarParceiroPage extends BasePage {
 	}
 
 	public void SetEscreverQtdeFuncionarios(String Texto) {
-		
+
 		escreveId("QuantidadeFuncionarios", Texto);
 	}
-	
+
 	public void SetRolarAPagina() {
 
 		JavascriptExecutor js = (JavascriptExecutor) getDriver();
 		js.executeScript("window.scrollBy(0,200)", "");
 	}
-	
+
 	public void SetEscreverNomeContato() throws InterruptedException {
-		
+
 		clicarBotaoBy(By.cssSelector("#Contato"));
 		Thread.sleep(1000);
 		escreveTexto(By.cssSelector("#Contato"), geraNomeAleatorio());
-		
+
 	}
-		
+
 	public void SetTelefoneCelular(String numero) {
 		escreveId("Empresa_PessoaEscola_Celular", numero);
 	}
@@ -79,12 +79,21 @@ public class MenuComercialCadastrarParceiroPage extends BasePage {
 	public void SetTelefoneComercial(String numero) {
 		escreveId("Empresa_PessoaEscola_Telefone", numero);
 	}
-	
+
 	public void SetEscreveEmail() {
 		escreveId("Empresa_PessoaEscola_Email", GeraEmailAleatorio());
 	}
-	
+
 	public void SetCep(String CEP) {
 		escreveId("Empresa_PessoaEscola_Endereco_CEP", CEP);
+	}
+
+	public void SetNumeroEnderecoParceiro(String numero) {
+		escreveId("Empresa_PessoaEscola_Endereco_Numero", numero);
+
+	}
+
+	public void SetSalvar() {
+		clicarbotao("btnEmpresaParceiraSave");
 	}
 }
