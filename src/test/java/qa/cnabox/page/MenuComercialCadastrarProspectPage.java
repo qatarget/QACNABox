@@ -140,13 +140,13 @@ public class MenuComercialCadastrarProspectPage extends BasePage {
 
 	public void SetSelecionarTipoAtendimento() {
 
-		clicarBotaoBy(By.xpath("//div[@id='row-tipo-atendimento']/section[@class='col col-12']/div/label[3]/i"));
+		clicarBotaoBy(By.cssSelector("#row-tipo-atendimento .radio:nth-of-type(1) i"));
 
 	}
 
 	public void SetSelecionarAcaoRealizada() {
 
-		clicarBotaoBy(By.xpath("//div[@class='inline-group']//label[6]//i[1]"));
+		clicarBotaoBy(By.cssSelector("#row-tipo-acao .radio:nth-of-type(3) i"));
 
 	}
 
@@ -155,7 +155,7 @@ public class MenuComercialCadastrarProspectPage extends BasePage {
 	}
 
 	public void SetSalvar() {
-		clicarbotao("btnProspectSaveMatricula");
+		clicarbotao("btnProspectSaveTesteNivel");
 	}
 
 	public void SetRolarPaginaParaCima() {
@@ -164,6 +164,9 @@ public class MenuComercialCadastrarProspectPage extends BasePage {
 	
 	public void SetoRolarCimaSemPageUP() {
 		JavascriptExecutor js = (JavascriptExecutor) getDriver();
-		js.executeScript("window.scrollBy(0,-250)", "");
+		js.executeScript("window.scrollBy(0,-1500)", "");
 	}
+	
+	
+	
 }

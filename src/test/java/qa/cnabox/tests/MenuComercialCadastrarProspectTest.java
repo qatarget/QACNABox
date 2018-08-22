@@ -6,7 +6,6 @@ import static qa.cnabox.core.DriverFactory.getDriver;
 
 import java.awt.AWTException;
 
-
 import org.junit.Assert;
 import org.junit.Test;
 import org.openqa.selenium.By;
@@ -27,12 +26,18 @@ public class MenuComercialCadastrarProspectTest extends BaseTest {
 		page.AguardaCarregarPagina();
 		page.SetEscreveNomeAluno();
 		page.SetEscreveEmail();
-		page.SetEscreverEmailAleatorio();
+		page.SetSelecionarTipoAtendimento();
+		page.AguardaCarregarPagina();
+		page.SetSelecionarAcaoRealizada();
+		page.AguardaCarregarPagina();
+		page.SetEscreverDescricao();
+		page.AguardaCarregarPagina();
 		page.SetSexoMasculino();
 		page.SetDataNascimento(" 14111986 ");
 		page.SetEstadoCivil("3");
 		page.SetTelefoneFixo(" 11345499472 ");
 		page.SetTelefoneCelular(" 11997499671 ");
+		page.SetRolarAPagina();
 		page.SetCep("        18045520");
 		page.RolarPagina();
 		page.SetNumeroResidencia("120");
@@ -43,24 +48,21 @@ public class MenuComercialCadastrarProspectTest extends BaseTest {
 		page.SetSelecionarHorario();
 		page.AguardaCarregarPagina();
 		page.SetRolarAPagina();
-		//Colocar CPF Manualmente//
-		page.SetEscreveCPF("894.882.430-90");
+		// Colocar CPF Manualmente//
+		//page.SetEscreveCPF("894.882.430-90");
 		page.AguardaCarregarPagina();
 		page.SetRolarAPagina();
 		page.SetSelecionarMidia("41");
 		page.AguardaCarregarPagina();
 		page.SetSelecionarCampanha("8");
-		Thread.sleep(2000);
-		page.SetRolarPaginaParaCima();
-		Thread.sleep(2000);
+		page.AguardaCarregarPagina();
 		page.SetoRolarCimaSemPageUP();
-		Thread.sleep(2000);
-		page.SetSelecionarTipoAtendimento();
-		page.SetSelecionarAcaoRealizada();
+		page.AguardaCarregarPagina();
+		page.SetSalvar();
 
 	}
 
-	// ************************************************************ Filtros	// ***********************************************************************//
+	// ************************************************************ Filtros*********************************************************//
 
 	@Test
 	public void DeveRealizarFiltroDeProspectPorNome() throws InterruptedException {
