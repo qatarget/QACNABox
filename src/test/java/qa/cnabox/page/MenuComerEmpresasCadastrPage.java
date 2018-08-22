@@ -36,6 +36,7 @@ public class MenuComerEmpresasCadastrPage extends BasePage {
 		clicarBotaoBy(By.cssSelector("#PessoaEscola_Nome"));
 		Thread.sleep(1000);
 		escreveTexto(By.cssSelector("PessoaEscola_Nome"), geraNomeAleatorio());
+		escreveTexto(By.cssSelector("#PessoaEscola_Nome"), geraNomeAleatorio());
 }
 
 	public void SetescreverRazao () throws InterruptedException {
@@ -46,6 +47,8 @@ public class MenuComerEmpresasCadastrPage extends BasePage {
 	}
 
 	public void SetescreverCNPJ () throws InterruptedException {
+		
+		
 		
 		escreveId("PessoaEscola_CPF_CNPJ", gerarcnpj(true));
 		Thread.sleep(1000);

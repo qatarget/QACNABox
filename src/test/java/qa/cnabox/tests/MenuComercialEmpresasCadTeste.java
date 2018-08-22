@@ -15,10 +15,15 @@ public class MenuComercialEmpresasCadTeste extends BaseTest {
 	public void DeveCadastrarNovaEmpresa () throws InterruptedException {
 		
 		page.SetclicarMenuComercial();
+		page.esperaCarregar(2000);
 		page.SetClicarEmpresas();
+		page.esperaCarregar(2000);
 		page.SetClicarNovaEmpresa();
+		page.esperaCarregar(2000);
 		page.SetescreverNome();
+		page.esperaCarregar(2000);
 		page.SetescreverRazao();
+		page.esperaCarregar(2000);
 		page.SetescreverCNPJ();
 		page.SetInscricaoEstadual("968.811.119.681");
 		
