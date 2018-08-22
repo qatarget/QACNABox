@@ -4,6 +4,8 @@ import qa.cnabox.core.BasePage;
 import static qa.cnabox.core.DriverFactory.getDriver;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.Select;
 
 
 
@@ -45,5 +47,57 @@ public class MenuComerEmpresasCadastrPage extends BasePage {
 		escreveTexto(By.cssSelector("#PessoaEscola_Apelido"), geraEmpresaAleatorio() );
 	}
 
-	public void SetescreverCNPJ () throws InterruptedException {}
-}
+	public void SetescreverCNPJ () throws InterruptedException {
+		
+		escreveId("PessoaEscola_CPF_CNPJ", gerarcnpj(true));
+		Thread.sleep(1000);
+	}
+	
+	
+	public void SetInscricaoEstadual (String Texto) throws InterruptedException {
+		
+		escreveId("PessoaEscola_RG_IE", Texto);
+	}
+	
+	public void SetCEP (String texto) throws InterruptedException {
+		
+		escreveId("PessoaEscola_Endereco_CEP", texto);
+		Thread.sleep(1000);
+	}
+	
+	public void SetEnderecoNumero (String texto) throws InterruptedException{
+		
+		escreveId("PessoaEscola_Endereco_Numero", texto);
+		Thread.sleep(1000);
+	
+	}
+	
+	public void SetTelefone (String texto) throws InterruptedException{
+		
+		escreveId("PessoaEscola_Telefone", texto);
+		Thread.sleep(1000);
+		
+	
+	}
+	
+	public void SetCelular (String Texto) throws InterruptedException {
+		
+		escreveId("PessoaEscola_Celular", Texto);
+		Thread.sleep(1000);
+		
+	}
+	
+	public void SetEmail () throws InterruptedException{
+		
+		escreveId("PessoaEscola_Email", GeraEmailAleatorio());
+		Thread.sleep(1000);
+	}
+	
+	public void SetTipo () throws InterruptedException{
+		
+		Select dropdown = new Select(getDriver().findElement(By.id("TipoEmpresaId")));
+		dropdown.selectByValue("3");
+		
+	}
+	
+	}

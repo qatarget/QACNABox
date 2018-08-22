@@ -6,6 +6,7 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.Select;
 
 import static qa.cnabox.core.DriverFactory.getDriver;
 
@@ -368,7 +369,7 @@ public class BasePage {
 		getDriver().findElement(By.id(id_combobox)).click();
 	}
 	
-	public void escreverNomeEscola(String name_escola, String texto) {
+	public void escreverClassName(String name_escola, String texto) {
 		getDriver().findElement(By.className(name_escola)).sendKeys(texto);
 
 	}
@@ -383,4 +384,5 @@ public class BasePage {
 		 js.executeScript("window.scrollBy(0,document.body.scrollHeight)");
 	}
 
+	
 }
