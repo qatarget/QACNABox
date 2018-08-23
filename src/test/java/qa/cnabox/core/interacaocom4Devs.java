@@ -56,7 +56,8 @@ public class interacaocom4Devs  extends BaseTest{
         getDriver().findElement(By.cssSelector(".clipboard-copy")).click();
         Thread.sleep(2000);
         
-        
+        getDriver().findElement(By.cssSelector(".clipboard-copy")).click();
+        Thread.sleep(2000);
         
         getDriver().close();
         
