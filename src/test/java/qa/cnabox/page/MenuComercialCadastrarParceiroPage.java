@@ -47,9 +47,9 @@ public class MenuComercialCadastrarParceiroPage extends BasePage {
 		escreveId("PessoaEscola_RG_IE", Texto);
 	}
 
-	public void SetescreverCNPJ() throws InterruptedException {
+	public void SetescreverCNPJ(String NumeroCNPJ) throws InterruptedException {
 
-		escreveId("Empresa_PessoaEscola_CPF_CNPJ", gerarcnpj(true));
+		escreveId("Empresa_PessoaEscola_CPF_CNPJ", NumeroCNPJ);
 		Thread.sleep(1000);
 	}
 
@@ -95,5 +95,10 @@ public class MenuComercialCadastrarParceiroPage extends BasePage {
 
 	public void SetSalvar() {
 		clicarbotao("btnEmpresaParceiraSave");
+	}
+	
+	public void SetoRolarCimaSemPageUP() {
+		JavascriptExecutor js = (JavascriptExecutor) getDriver();
+		js.executeScript("window.scrollBy(0,-1500)", "");
 	}
 }

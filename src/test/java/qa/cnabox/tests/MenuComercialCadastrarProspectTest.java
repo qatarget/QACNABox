@@ -4,8 +4,6 @@ import qa.cnabox.core.BaseTest;
 import qa.cnabox.page.MenuComercialCadastrarProspectPage;
 import static qa.cnabox.core.DriverFactory.getDriver;
 
-import java.awt.AWTException;
-
 import org.junit.Assert;
 import org.junit.Test;
 import org.openqa.selenium.By;
@@ -17,7 +15,7 @@ public class MenuComercialCadastrarProspectTest extends BaseTest {
 //*********************************************************Cadastro de Prospect**************************************************************//
 
 	@Test
-	public void DeveCadastrarNovoProspect() throws InterruptedException, AWTException {
+	public void DeveCadastrarNovoProspect() throws InterruptedException {
 		page.SetClicarMenu();
 		page.AguardaCarregarPagina();
 		page.SetClicarSubMenu();
