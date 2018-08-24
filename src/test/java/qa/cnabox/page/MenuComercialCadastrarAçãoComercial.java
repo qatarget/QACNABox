@@ -4,9 +4,7 @@ import qa.cnabox.core.BasePage;
 import static qa.cnabox.core.DriverFactory.getDriver;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.Select;
+
 
 public class MenuComercialCadastrarAçãoComercial extends BasePage {
 

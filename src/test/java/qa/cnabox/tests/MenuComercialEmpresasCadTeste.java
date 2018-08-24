@@ -23,8 +23,9 @@ public class MenuComercialEmpresasCadTeste extends BaseTest {
 		page.SetescreverNome();
 		page.esperaCarregar(2000);
 		page.SetescreverRazao();
-		page.esperaCarregar(2000);
-		page.SetescreverCNPJ();
+		page.esperaCarregar(3000);
+		page.BuscaCNPJ();
+		page.Tempo(2000);
 		page.SetInscricaoEstadual("968.811.119.681");
 		
 		

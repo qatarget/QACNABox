@@ -151,7 +151,7 @@ public class MenuComercialCadastrarProspectPage extends BasePage {
 	     getDriver().findElement(By.id("CPF_CNPJ")).click();
 	     Thread.sleep(3000);
 	     
-	     //// aqui ele vai escrever a variavél armazenada anteriormente///
+	     //// aqui ele vai escrever a variavel armazenada anteriormente///
 	     getDriver().findElement(By.id("CPF_CNPJ")).sendKeys(Textocampo);
 	     
 	}
