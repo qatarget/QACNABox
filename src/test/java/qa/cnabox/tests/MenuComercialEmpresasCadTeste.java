@@ -2,7 +2,7 @@ package qa.cnabox.tests;
 
 import qa.cnabox.core.BaseTest;
 import qa.cnabox.page.MenuComerEmpresasCadastrPage;
-import qa.cnabox.core.DriverFactory;
+
 
 import org.junit.Test;
 
@@ -14,8 +14,9 @@ public class MenuComercialEmpresasCadTeste extends BaseTest {
 	
 	public void DeveCadastrarNovaEmpresa () throws InterruptedException {
 		
+		page.esperaCarregar(3000);
 		page.SetclicarMenuComercial();
-		page.esperaCarregar(2000);
+		page.esperaCarregar(3000);
 		page.SetClicarEmpresas();
 		page.esperaCarregar(2000);
 		page.SetClicarNovaEmpresa();
@@ -25,8 +26,14 @@ public class MenuComercialEmpresasCadTeste extends BaseTest {
 		page.SetescreverRazao();
 		page.esperaCarregar(3000);
 		page.BuscaCNPJ();
-		page.Tempo(2000);
+		page.Tempo(3000);
 		page.SetInscricaoEstadual("968.811.119.681");
+		page.Tempo(3000);
+		page.BuscaCEP();
+		page.Tempo(2000);
+		page.EnderecoNumero("914");
+		page.Tempo(2000);
+		
 		
 		
 	}

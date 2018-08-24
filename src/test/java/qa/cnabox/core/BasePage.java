@@ -394,5 +394,8 @@ public class BasePage {
         getDriver().findElement(By.name(name)).sendKeys(texto);
     }
 
+	public String ObterTextoCampoIdvalue(String name)
+    {
+        return getDriver().findElement(By.tagName(name)).getText();}
 }
 
