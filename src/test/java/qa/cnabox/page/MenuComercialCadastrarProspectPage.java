@@ -2,13 +2,9 @@ package qa.cnabox.page;
 
 import qa.cnabox.core.BasePage;
 import static qa.cnabox.core.DriverFactory.getDriver;
-
 import java.awt.AWTException;
 import java.awt.Robot;
 import java.awt.event.KeyEvent;
-
-import javax.lang.model.util.Elements;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriverException;
@@ -17,7 +13,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import com.gargoylesoftware.htmlunit.javascript.host.Element;
+
 
 public class MenuComercialCadastrarProspectPage extends BasePage {
 
@@ -135,21 +131,29 @@ public class MenuComercialCadastrarProspectPage extends BasePage {
 	        for (String handle : getDriver().getWindowHandles()) {
 	        	getDriver().switchTo().window(handle);}
 		    Thread.sleep(1000);
-	        getDriver().navigate().to("https://www.4devs.com.br/gerador_de_cpf");
+	        //// Sempre trocar para a pagina desejada como por exemplo: cpf ou cnpj ///
+		    getDriver().navigate().to("https://www.4devs.com.br/gerador_de_cpf");
 	        Thread.sleep(2000);
 	        getDriver().findElement(By.cssSelector("[type='button']")).click();
 	        Thread.sleep(2000);
-	       String Textocampo = ObterTextoCampoId("texto_cpf");
+	       
+	    ////// nesse comando o selenium armazena a variavel atribuida no campo texto_cpf////
+	        String Textocampo = ObterTextoCampoId("texto_cpf");
 	     Thread.sleep(2000);
 	     getDriver().close();
 	     Thread.sleep(6000);
+	     
+	     ////// Aqui ele vai retornar para a pagina do BOX////
+	     
 	     for (String CNABox : getDriver().getWindowHandles()) {
 	     getDriver().switchTo().window(CNABox);}
 	     Thread.sleep(2000);
 	     getDriver().findElement(By.id("CPF_CNPJ")).click();
-	     Thread.sleep(2000);
+	     Thread.sleep(3000);
+	     
+	     //// aqui ele vai escrever a variavél armazenada anteriormente///
 	     getDriver().findElement(By.id("CPF_CNPJ")).sendKeys(Textocampo);
-	     Thread.sleep(2000);
+	     
 	}
 		
 	
