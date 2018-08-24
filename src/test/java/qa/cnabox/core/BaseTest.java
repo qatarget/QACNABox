@@ -9,7 +9,6 @@ import org.junit.Rule;
 import org.junit.rules.TestName;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
-
 import qa.cnabox.page.LoginPage;
 import static qa.cnabox.core.DriverFactory.getDriver;
 //import static qa.cnabox.core.DriverFactory.killDriver;

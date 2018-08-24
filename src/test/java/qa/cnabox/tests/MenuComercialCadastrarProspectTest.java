@@ -3,11 +3,8 @@ package qa.cnabox.tests;
 import qa.cnabox.core.BaseTest;
 import qa.cnabox.page.MenuComercialCadastrarProspectPage;
 import static qa.cnabox.core.DriverFactory.getDriver;
-
-import org.junit.Assert;
 import org.junit.Test;
-import org.openqa.selenium.By;
-
+import org.openqa.selenium.JavascriptExecutor;
 public class MenuComercialCadastrarProspectTest extends BaseTest {
 
 	MenuComercialCadastrarProspectPage page = new MenuComercialCadastrarProspectPage();
@@ -45,9 +42,11 @@ public class MenuComercialCadastrarProspectTest extends BaseTest {
 		page.RolarPagina();
 		page.SetSelecionarHorario();
 		page.AguardaCarregarPagina();
-		page.SetRolarAPagina();
-		// Colocar CPF Manualmente//
-		//page.SetEscreveCPF("894.882.430-90");
+		JavascriptExecutor js = (JavascriptExecutor) getDriver();
+		js.executeScript("window.scrollBy(0,350)", "");
+		page.AguardaCarregarPagina();
+		page.BuscaCPF();
+		Thread.sleep(3000);
 		page.AguardaCarregarPagina();
 		page.SetRolarAPagina();
 		page.SetSelecionarMidia("41");
@@ -59,58 +58,7 @@ public class MenuComercialCadastrarProspectTest extends BaseTest {
 		page.SetSalvar();
 
 	}
-
-	// ************************************************************ Filtros*********************************************************//
-
-	@Test
-	public void DeveRealizarFiltroDeProspectPorNome() throws InterruptedException {
-		getDriver()
-				.findElement(By.xpath(
-						"//div[@id='menu-lateral']/ul[@class='nav-left-bar']/li[6]/a[@href='#']/span[.='Comercial']"))
-				.click();
-		getDriver().findElement(By.xpath(
-				"//div[@id='menu-lateral']/ul[@class='nav-left-bar']/li[6]/ul[@class='sub-menu']//span[.='Atendimento']"))
-				.click();
-		Thread.sleep(3000);
-		getDriver().findElement(By.cssSelector("#AtendimentoNome")).sendKeys("ALUNO TESTE");
-		getDriver().findElement(By.cssSelector("#btnAtendimentoFilter")).click();
-		Thread.sleep(3000);
-		Assert.assertEquals("ALUNO TESTE",
-				getDriver().findElement(By.cssSelector("#AtendimentoNome")).getAttribute("value"));
-
-	}
-
-	@Test
-	public void DeveRealizarFiltroDeProspectPorEmail() throws InterruptedException {
-		getDriver()
-				.findElement(By.xpath(
-						"//div[@id='menu-lateral']/ul[@class='nav-left-bar']/li[6]/a[@href='#']/span[.='Comercial']"))
-				.click();
-		getDriver().findElement(By.xpath(
-				"//div[@id='menu-lateral']/ul[@class='nav-left-bar']/li[6]/ul[@class='sub-menu']//span[.='Atendimento']"))
-				.click();
-		Thread.sleep(3000);
-		getDriver().findElement(By.cssSelector("#AtendimentoEmail")).sendKeys("TESTE@TESTE.COM.BR");
-		getDriver().findElement(By.cssSelector("#btnAtendimentoFilter")).click();
-		Thread.sleep(3000);
-		Assert.assertEquals("TESTE@TESTE.COM.BR",
-				getDriver().findElement(By.cssSelector("#AtendimentoEmail")).getAttribute("value"));
-	}
-
-	@Test
-	public void DeveRealizarFiltroDeProspectPorTelefone() throws InterruptedException {
-		getDriver()
-				.findElement(By.xpath(
-						"//div[@id='menu-lateral']/ul[@class='nav-left-bar']/li[6]/a[@href='#']/span[.='Comercial']"))
-				.click();
-		getDriver().findElement(By.xpath(
-				"//div[@id='menu-lateral']/ul[@class='nav-left-bar']/li[6]/ul[@class='sub-menu']//span[.='Atendimento']"))
-				.click();
-		Thread.sleep(3000);
-		getDriver().findElement(By.cssSelector("#AtendimentoTelefone")).sendKeys("  1997499671 ");
-		getDriver().findElement(By.cssSelector("#btnAtendimentoFilter")).click();
-		Thread.sleep(3000);
-		Assert.assertEquals("(19) 9749-9671",
-				getDriver().findElement(By.cssSelector("#AtendimentoTelefone")).getAttribute("value"));
-	}
 }
+
+
+	

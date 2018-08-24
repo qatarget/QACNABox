@@ -3,10 +3,21 @@ package qa.cnabox.page;
 import qa.cnabox.core.BasePage;
 import static qa.cnabox.core.DriverFactory.getDriver;
 
+import java.awt.AWTException;
+import java.awt.Robot;
+import java.awt.event.KeyEvent;
+
+import javax.lang.model.util.Elements;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriverException;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import com.gargoylesoftware.htmlunit.javascript.host.Element;
 
 public class MenuComercialCadastrarProspectPage extends BasePage {
 
@@ -77,7 +88,7 @@ public class MenuComercialCadastrarProspectPage extends BasePage {
 
 	}
 
-	public void SetRolarAPagina() {
+	public void SetRolarAPagina(){
 
 		JavascriptExecutor js = (JavascriptExecutor) getDriver();
 		js.executeScript("window.scrollBy(0,200)", "");
@@ -90,14 +101,6 @@ public class MenuComercialCadastrarProspectPage extends BasePage {
 	}
 
 	public void SetSelecionarEstagio(String estagio) throws InterruptedException {
-		// WebElement estagioInteresse = getDriver().findElement(By.xpath(
-		// "/html//section[@id='widget-grid']/div/div[1]/div[@class='jarviswidget
-		// jarviswidget-color-darken']//div[@class='widget-body']/div[@class='smart-form']/fieldset[4]/div[@class='row']/section[@class='col
-		// col-12']/table//tr[@class='bg-color-blue
-		// txt-color-white']//select[@name='EstagioInteresseId_1']"));
-		// Select comboEstagioInteresse = new Select(estagioInteresse);
-		// comboEstagioInteresse.selectByValue(estagio);
-
 		clicarBotaoBy(By.cssSelector(".txt-color-white .input-sm"));
 		Thread.sleep(1000);
 
@@ -112,9 +115,44 @@ public class MenuComercialCadastrarProspectPage extends BasePage {
 				By.xpath("/html//table[@id='datatable_tabletools']/tbody/tr[1]/td[7]/label[@class='checkbox']/i"));
 	}
 
-	public void SetEscreveCPF(String texto) {
-		escreveId("CPF_CNPJ", texto);
+	public void BuscaCPF()  throws InterruptedException{
+			
+		Thread.sleep(2000);
+			try {
+					Robot robot = new Robot();
+					robot.keyPress(KeyEvent.VK_CONTROL);
+					robot.keyPress(KeyEvent.VK_T);
+					robot.keyRelease(KeyEvent.VK_CONTROL);
+					robot.keyRelease(KeyEvent.VK_T);
+				} 	
+				catch (AWTException ex) {
+				throw new WebDriverException("Erro ao digitar CTRL + T", ex);
+	      
+				}
+				WebDriverWait wait = new WebDriverWait(getDriver(), 5);
+				wait.until(ExpectedConditions.numberOfWindowsToBe(2));
+
+	        for (String handle : getDriver().getWindowHandles()) {
+	        	getDriver().switchTo().window(handle);}
+		    Thread.sleep(1000);
+	        getDriver().navigate().to("https://www.4devs.com.br/gerador_de_cpf");
+	        Thread.sleep(2000);
+	        getDriver().findElement(By.cssSelector("[type='button']")).click();
+	        Thread.sleep(2000);
+	       String Textocampo = ObterTextoCampoId("texto_cpf");
+	     Thread.sleep(2000);
+	     getDriver().close();
+	     Thread.sleep(6000);
+	     for (String CNABox : getDriver().getWindowHandles()) {
+	     getDriver().switchTo().window(CNABox);}
+	     Thread.sleep(2000);
+	     getDriver().findElement(By.id("CPF_CNPJ")).click();
+	     Thread.sleep(2000);
+	     getDriver().findElement(By.id("CPF_CNPJ")).sendKeys(Textocampo);
+	     Thread.sleep(2000);
 	}
+		
+	
 
 	public void SetEscreveRG() {
 		escreveId("RG_IE", "452484863");
