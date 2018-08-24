@@ -2,21 +2,17 @@ package qa.cnabox.tests;
 
 import qa.cnabox.core.BaseTest;
 import qa.cnabox.page.MenuComercialCadastrarParceiroPage;
-import static qa.cnabox.core.DriverFactory.getDriver;
-
-import java.awt.AWTException;
-
-import org.junit.Assert;
 import org.junit.Test;
-import org.openqa.selenium.By;
 
-public class MenuComercialCadastrarParceiroTeste extends BaseTest  {
-	
+public class MenuComercialCadastrarParceiroTeste extends BaseTest {
+
 	MenuComercialCadastrarParceiroPage page = new MenuComercialCadastrarParceiroPage();
-	
+
 	@Test
 	public void DeveCadastrarNovoParceiro() throws InterruptedException {
 		page.SetClicarMenuComercial();
+		page.AguardaCarregarPagina();
+		page.SetRolarAPagina();
 		page.SetClicarSubMenuParceiro();
 		page.AguardaCarregarPagina();
 		page.SetClicarCadastrarParceiro();
@@ -24,7 +20,7 @@ public class MenuComercialCadastrarParceiroTeste extends BaseTest  {
 		page.SetCategoria("1");
 		page.SetescreverNomeParceiro();
 		page.AguardaCarregarPagina();
-		page.SetescreverCNPJ("    75183755000178");
+		page.SetescreverCNPJ("    93663029000134");
 		page.AguardaCarregarPagina();
 		page.SetEscreverQtdeFuncionarios("10");
 		page.SetRolarAPagina();
@@ -33,13 +29,15 @@ public class MenuComercialCadastrarParceiroTeste extends BaseTest  {
 		page.SetTelefoneCelular("11123456789");
 		page.SetEscreveEmail();
 		page.SetRolarAPagina();
+		page.SetRolarAPagina();
 		page.AguardaCarregarPagina();
-		page.SetCep("    02118000");
+		page.SetCep("    08771184");
 		page.AguardaCarregarPagina();
 		page.SetNumeroEnderecoParceiro("120");
 		page.SetoRolarCimaSemPageUP();
-		//page.SetSalvar();
-		
+		page.AguardaCarregarPagina();
+		page.SetSalvar();
+
 	}
 
 }
