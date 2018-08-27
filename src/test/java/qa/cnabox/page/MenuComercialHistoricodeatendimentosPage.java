@@ -3,16 +3,9 @@ package qa.cnabox.page;
 
 import qa.cnabox.core.BasePage;
 import static qa.cnabox.core.DriverFactory.getDriver;
-
-import java.awt.AWTException;
-import java.awt.Robot;
-import java.awt.event.KeyEvent;
-
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriverException;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
-import org.openqa.selenium.support.ui.WebDriverWait;
+
 
 public class MenuComercialHistoricodeatendimentosPage extends BasePage {
 
