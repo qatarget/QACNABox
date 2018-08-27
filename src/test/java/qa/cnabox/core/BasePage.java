@@ -397,5 +397,18 @@ public class BasePage {
 	public String ObterTextoCampoIdvalue(String name)
     {
         return getDriver().findElement(By.tagName(name)).getText();}
+
+
+	public String GeraCEP() {
+		String[] municipio = { "18115760", "69099208", "60868717", "93544260", "29046552", "58401186",
+				"74948060", "09894330", "13475294", "23510540", "77825100", "64090685", "68904395",
+				"49008051", "Alfenas", "79005100", "88132013", "49042020" };
+		StringBuilder estadosAleatorio = new StringBuilder();
+		estadosAleatorio.append(municipio[new Random().nextInt(26)]).append(" ");
+				
+		return estadosAleatorio.toString();
+	}
+
+
 }
 

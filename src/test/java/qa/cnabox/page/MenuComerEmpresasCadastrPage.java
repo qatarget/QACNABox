@@ -115,51 +115,9 @@ public class MenuComerEmpresasCadastrPage extends BasePage {
 	public void BuscaCEP () throws InterruptedException {
 		
 		Thread.sleep(2000);
-		try {
-				Robot robot = new Robot();
-				robot.keyPress(KeyEvent.VK_CONTROL);
-				robot.keyPress(KeyEvent.VK_T);
-				robot.keyRelease(KeyEvent.VK_CONTROL);
-				robot.keyRelease(KeyEvent.VK_T);
-			} 	
-			catch (AWTException ex) {
-			throw new WebDriverException("Erro ao digitar CTRL + T", ex);
-      
-			}
-			WebDriverWait wait = new WebDriverWait(getDriver(), 5);
-			wait.until(ExpectedConditions.numberOfWindowsToBe(2));
-
-        for (String handle : getDriver().getWindowHandles()) {
-        	getDriver().switchTo().window(handle);}
-	    Thread.sleep(1000);
-        //// Sempre trocar para a pagina desejada como por exemplo: cpf ou cnpj ///
-	    getDriver().navigate().to("https://www.4devs.com.br/gerador_de_cep");
-       // Thread.sleep(2000);
-        //getDriver().findElement(By.cssSelector("[for='somente_numeros_nao'] [type]")).click();
-        Thread.sleep(2000);
-        getDriver().findElement(By.cssSelector("[type='button']")).click();
-        Thread.sleep(2000);
-        
-    ////// nesse comando o selenium armazena a variavel atribuida no campo texto_cpf////
-        getDriver().findElement(By.id("cep")).click(); 
-        Thread.sleep(2000);
-        String TextoValor= ObterTextoCampoIdvalue("Value");
-     Thread.sleep(2000);
-     getDriver().close();
-     Thread.sleep(5000);
-     
-     ////// Aqui ele vai retornar para a pagina do BOX////
-     
-     for (String CNABox : getDriver().getWindowHandles()) {
-     getDriver().switchTo().window(CNABox);}
-     Thread.sleep(2000);
-     getDriver().findElement(By.id("PessoaEscola_Endereco_CEP")).click();
-     Thread.sleep(3000);
-     getDriver().findElement(By.id("PessoaEscola_Endereco_CEP")).clear();
-     //// aqui ele vai escrever a variavel armazenada anteriormente///
-     getDriver().findElement(By.id("PessoaEscola_Endereco_CEP")).sendKeys(TextoValor);
-     Thread.sleep(3000);
-
+		getDriver().findElement(By.id("PessoaEscola_Endereco_CEP")).click();
+		escreveTexto(By.id("PessoaEscola_Endereco_CEP"), GeraCEP());
+		Thread.sleep(1000);
 		
 	}
 
