@@ -12,7 +12,7 @@ public class MenuComercialHistoricodeAtendimentoTeste extends BaseTest {
 	
 	@Test
 	
-	public void DeveCadastrarNovaEmpresa () throws InterruptedException {
+	public void Deverealizarfiltrohistorico () throws InterruptedException {
 		
 
 		page.SetclicarMenuComercial();
@@ -31,7 +31,7 @@ public class MenuComercialHistoricodeAtendimentoTeste extends BaseTest {
 		page.TipodoAtendimento();
 		page.Tempo(1000);
 		page.SetClicaremfiltrar();
-		page.Tempo(1000);
+		page.Tempo(3000);
 		page.SetExportar();
 		
 	}
