@@ -22,7 +22,7 @@ public class MenuComercialHistoricodeatendimentosPage extends BasePage {
 		Thread.sleep(1000);
 		}
 
-	public void SetClicarEmpresas() throws InterruptedException {
+	public void SetClicarHistoricodeatendimento() throws InterruptedException {
 
 		clicarBotaoBy(By.linkText("Histórico de Atendimentos"));
 		Thread.sleep(1000);
@@ -47,7 +47,8 @@ public class MenuComercialHistoricodeatendimentosPage extends BasePage {
 		clicarBotaoBy(By.cssSelector("#DataRealizacaoAtendimentoAte"));
 		Thread.sleep(1000);
 		escreveTexto(By.cssSelector("#DataRealizacaoAtendimentoAte"),texto);
-		
+		Thread.sleep(1000);
+		clicarBotaoBy(By.cssSelector("#wid-filtro header"));
 	}
 	
 	public void Situaçãodoatendido() throws InterruptedException{
@@ -68,7 +69,7 @@ public class MenuComercialHistoricodeatendimentosPage extends BasePage {
 							///Legendas////
 		//// 1-Comercial, 2- Pedagógico, 3-Financeiro, 11-Adiministrativo////
 		
-		Select dropdown = new Select(getDriver().findElement(By.id("TipoSituacaoPessoaEscola")));
+		Select dropdown = new Select(getDriver().findElement(By.id("CategoriaAtendimentoId")));
 		dropdown.selectByValue("11");
 		Thread.sleep(1000);
 		}
@@ -101,4 +102,8 @@ public class MenuComercialHistoricodeatendimentosPage extends BasePage {
 		
 	}
 	
+public void Tempo (int Tempo) throws InterruptedException {
+		
+		Thread.sleep(Tempo);
+	}
 }
