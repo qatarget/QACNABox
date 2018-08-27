@@ -51,6 +51,11 @@ public class MenuComercialHistoricodeatendimentosPage extends BasePage {
 	}
 	
 	public void Situaçãodoatendido() throws InterruptedException{
+		
+		                    ///Legendas////
+		/// 3-Aluno, 5-Ex-aluno, 2-Prospect, 1-Cadastro, 6-Suspenso, 4-Empresa/////
+		
+		
 		Select dropdown = new Select(getDriver().findElement(By.id("TipoSituacaoPessoaEscola")));
 		dropdown.selectByValue("3");
 		Thread.sleep(1000);;
@@ -60,7 +65,7 @@ public class MenuComercialHistoricodeatendimentosPage extends BasePage {
 	
 	public void CategoriadoAtendimento() throws InterruptedException{
 		
-		///Legendas////
+							///Legendas////
 		//// 1-Comercial, 2- Pedagógico, 3-Financeiro, 11-Adiministrativo////
 		
 		Select dropdown = new Select(getDriver().findElement(By.id("TipoSituacaoPessoaEscola")));
@@ -68,9 +73,9 @@ public class MenuComercialHistoricodeatendimentosPage extends BasePage {
 		Thread.sleep(1000);
 		}
 
-public void TipodoAtendimento() throws InterruptedException{
+	public void TipodoAtendimento() throws InterruptedException{
 		
-		///Legendas////
+					///Legendas////
 	/// 2- eletronico,3-Pessoal,1-telefonico,4-SMS/////
 	
 		
@@ -79,4 +84,21 @@ public void TipodoAtendimento() throws InterruptedException{
 		Thread.sleep(1000);
 
 }
+	
+	public void Setopcoesefetivoou (String texto) throws InterruptedException {
+		
+		clicarBotaoBy(By.cssSelector("#order-form [class='col col-4']:nth-of-type(3) .radio:nth-of-type(1) i"));
+		Thread.sleep(1000);
+	
+	
+	}
+	
+	public void SetExportar() throws InterruptedException{
+		
+		Thread.sleep(1000);
+		clicarBotaoBy(By.cssSelector("#order-form [href]"));
+		Thread.sleep(1000);
+		
+	}
+	
 }
