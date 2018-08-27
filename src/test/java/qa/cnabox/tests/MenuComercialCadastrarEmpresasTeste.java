@@ -1,14 +1,14 @@
 package qa.cnabox.tests;
 
 import qa.cnabox.core.BaseTest;
-import qa.cnabox.page.MenuComerEmpresasCadastrPage;
+import qa.cnabox.page.MenuComercialCadastrarEmpresasPage;
 
 
 import org.junit.Test;
 
-public class MenuComercialEmpresasCadTeste extends BaseTest {
+public class MenuComercialCadastrarEmpresasTeste extends BaseTest {
 
-	MenuComerEmpresasCadastrPage page = new MenuComerEmpresasCadastrPage();
+	MenuComercialCadastrarEmpresasPage page = new MenuComercialCadastrarEmpresasPage();
 	
 	@Test
 	
@@ -33,8 +33,13 @@ public class MenuComercialEmpresasCadTeste extends BaseTest {
 		page.Tempo(2000);
 		page.EnderecoNumero("914");
 		page.Tempo(2000);
-		
-		
+		page.SetTelefone();
+		page.Tempo(1000);
+		page.SetEmail();
+		page.Tempo(1000);
+		page.SetTipo();
+		page.Tempo(1000);
+		page.Setclicarsalvar();
 		
 	}
 }

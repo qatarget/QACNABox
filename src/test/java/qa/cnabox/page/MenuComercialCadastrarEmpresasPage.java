@@ -9,14 +9,11 @@ import java.awt.event.KeyEvent;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriverException;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Action;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class MenuComerEmpresasCadastrPage extends BasePage {
+public class MenuComercialCadastrarEmpresasPage extends BasePage {
 
 	public void SetclicarMenuComercial() throws InterruptedException {
 
@@ -124,15 +121,18 @@ public class MenuComerEmpresasCadastrPage extends BasePage {
 	public void EnderecoNumero(String texto) throws InterruptedException {
 
 		escreveId("PessoaEscola_Endereco_Numero", texto);
-		Thread.sleep(1000);
+		Thread.sleep(3000);
 
 	}
 
-	public void SetTelefone(String texto) throws InterruptedException {
+	public void SetTelefone() throws InterruptedException {
 
-		escreveId("PessoaEscola_Telefone", texto);
+		getDriver().findElement(By.id("PessoaEscola_Telefone")).click();
 		Thread.sleep(1000);
-
+		escreveTexto(By.id("PessoaEscola_Telefone"), Geratelefone());
+		Thread.sleep(1000);
+		
+	
 	}
 
 	public void SetCelular(String Texto) throws InterruptedException {
@@ -160,4 +160,11 @@ public class MenuComerEmpresasCadastrPage extends BasePage {
 		Thread.sleep(Tempo);
 	}
 
+	
+	public void Setclicarsalvar() throws InterruptedException {
+		
+		Thread.sleep(1000);
+		getDriver().findElement(By.id("btnEmpresasSave")).click();
+		
+	}
 }

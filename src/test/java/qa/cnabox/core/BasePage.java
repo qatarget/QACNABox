@@ -400,15 +400,23 @@ public class BasePage {
 
 
 	public String GeraCEP() {
-		String[] municipio = { "18115760", "69099208", "60868717", "93544260", "29046552", "58401186",
+		String[] Cep = { "18115760", "69099208", "60868717", "93544260", "29046552", "58401186",
 				"74948060", "09894330", "13475294", "23510540", "77825100", "64090685", "68904395",
-				"49008051", "Alfenas", "79005100", "88132013", "49042020" };
-		StringBuilder estadosAleatorio = new StringBuilder();
-		estadosAleatorio.append(municipio[new Random().nextInt(26)]).append(" ");
+				"49008051", "18000560", "79005100", "88132013", "49042020" };
+		StringBuilder CepAleatorio = new StringBuilder();
+		CepAleatorio.append(Cep[new Random().nextInt(26)]).append(" ");
 				
-		return estadosAleatorio.toString();
+		return CepAleatorio.toString();
 	}
 
-
+	public String Geratelefone() {
+		String[] telefone = { "112816-6989", "142981-6003", "133939-7305", "152680-7114", "112856-4188", "182837-8327",
+				"192744-0990", "113794-2454", "122908-8195", "163846-2139", "112500-0095", "193951-8355", "193655-3846",
+				"192889-7746", "193558-9118", "112776-8167", "112539-1454", "143707-5850" };
+		StringBuilder telefoneAleatorio = new StringBuilder();
+		telefoneAleatorio.append(telefone[new Random().nextInt(26)]).append(" ");
+	
+		return telefoneAleatorio.toString();
+	}
 }
 
