@@ -49,5 +49,34 @@ public class MenuComercialHistoricodeatendimentosPage extends BasePage {
 		escreveTexto(By.cssSelector("#DataRealizacaoAtendimentoAte"),texto);
 		
 	}
+	
+	public void Situaçãodoatendido() throws InterruptedException{
+		Select dropdown = new Select(getDriver().findElement(By.id("TipoSituacaoPessoaEscola")));
+		dropdown.selectByValue("3");
+		Thread.sleep(1000);;
+		
+	}
 
+	
+	public void CategoriadoAtendimento() throws InterruptedException{
+		
+		///Legendas////
+		//// 1-Comercial, 2- Pedagógico, 3-Financeiro, 11-Adiministrativo////
+		
+		Select dropdown = new Select(getDriver().findElement(By.id("TipoSituacaoPessoaEscola")));
+		dropdown.selectByValue("11");
+		Thread.sleep(1000);
+		}
+
+public void TipodoAtendimento() throws InterruptedException{
+		
+		///Legendas////
+	/// 2- eletronico,3-Pessoal,1-telefonico,4-SMS/////
+	
+		
+		Select dropdown = new Select(getDriver().findElement(By.id("TipoAtendimentoId")));
+		dropdown.selectByValue("3");
+		Thread.sleep(1000);
+
+}
 }
