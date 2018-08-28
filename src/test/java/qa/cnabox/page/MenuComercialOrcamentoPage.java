@@ -46,8 +46,64 @@ public class MenuComercialOrcamentoPage extends BasePage {
 	}
 
 
+	public void Setdatavalidade(String texto) throws InterruptedException {
+
+		clicarBotaoBy(By.cssSelector("#DataValidade"));
+		Thread.sleep(1000);
+		escreveTexto(By.cssSelector("#DataValidade"), texto);
+	}
+
+	public void OrcamentoPasso2() throws InterruptedException {
+
+		clicarBotaoBy(By.cssSelector("#orcamento [type='button']"));
+		Thread.sleep(1000);
+	}
+
+	public void SetEstagios() throws InterruptedException{
+		
+							///Legenda estágios////
+				///**value="2078"-BÁSICO1, value="2062"PRE-SCHOOLGARDEN1, value="2066"YOUNG KIDS1,//// 
+				///**value="2070"KIDS 1, value="2074"TEENS1, value="2088"FAST1**/////
+
+		Select dropdown = new Select(getDriver().findElement(By.id("#EscolaEstagioId")));
+		dropdown.selectByValue("2078");
+		Thread.sleep(1000);;
+
+	}
+	
+	public void SetModalidade() throws InterruptedException{
+		
+						///Legenda estágios////
+		///"1"-EXTENSIVO,"2"-INTENSIVO, "3"-PLUS/////
+
+		Select dropdown = new Select(getDriver().findElement(By.id("#ModalidadeId")));
+		dropdown.selectByValue("1");
+		Thread.sleep(1000);;
+	}
+	
+	public void Setproximoestagio() throws InterruptedException{
+		
+		clicarBotaoBy(By.cssSelector(".default td:nth-of-type(1) i"));
+		Thread.sleep(1000);
+		
+	}
 
 
+	public void SetProximoPasso() throws InterruptedException{
+	
+	clicarBotaoBy(By.id("btnDocumentoEstagioSave"));
+	Thread.sleep(1000);
+}
 
+	public void Setcondicaodepagamento() throws InterruptedException{
+		
 
+				///Legenda estágios////
+		///"1"-cartão de debito,"2"-cartão de credito, "3"-cheque, 4-dinheiro, 5-credito em conta/////
+		/// 6-cobrança bancaria(boleto), 7 carnê, 8 cheque pré datado///
+		
+		Select dropdown = new Select(getDriver().findElement(By.id("EstagioFormaPagamentoId")));
+		dropdown.selectByValue("4");
+		Thread.sleep(1000);
+	}
 }
