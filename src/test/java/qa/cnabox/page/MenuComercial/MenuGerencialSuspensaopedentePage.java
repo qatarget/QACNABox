@@ -8,9 +8,8 @@ import java.awt.Robot;
 import java.awt.event.KeyEvent;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebDriverException;
-import org.openqa.selenium.support.ui.Select;
+
 
 
 
@@ -28,7 +27,11 @@ public class MenuGerencialSuspensaopedentePage extends BasePage {
 		((JavascriptExecutor) getDriver()).executeScript("scroll(0,500)");
 	}
 
-	
+	public void SetclicarFiltro() throws InterruptedException {
+
+		clicarBotaoBy(By.id("btnSuspensaoFilter"));
+		Thread.sleep(1000);
+		} 
 	
 	public void SetClicarmenuSuspensaoPendente() throws InterruptedException {
 
@@ -70,6 +73,21 @@ public class MenuGerencialSuspensaopedentePage extends BasePage {
 		
 		clicarBotaoBy(By.cssSelector("textarea"));
 		Thread.sleep(1000);
-		getDriver().findElement(By.cssSelector("textarea")).sendKeys(GerarTituloAleatorio());
+		getDriver().findElement(By.cssSelector("textarea")).sendKeys("Sim");
 	}
+	
+	
+	
+		public void Tempo (int Tempo) throws InterruptedException {
+		
+		Thread.sleep(Tempo);
+		
+	}
+		public void SetDescricaosalvar() throws InterruptedException{
+			
+			clicarBotaoBy(By.className("btn btn-primary"));
+			Thread.sleep(1000);
+		}
+		
+		
 }
