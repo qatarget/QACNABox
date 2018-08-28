@@ -1,4 +1,4 @@
-package qa.cnabox.tests;
+package qa.cnabox.tests.MenuComercial;
 
 public class MenuComercialOrcamentoTeste {
 

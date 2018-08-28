@@ -1,4 +1,4 @@
-package qa.cnabox.tests;
+package qa.cnabox.tests.MenuComercial;
 
 import qa.cnabox.core.BaseTest;
 import qa.cnabox.page.MenuComercial.MenuComercialHistoricodeatendimentosPage;
