@@ -148,7 +148,7 @@ public void SetClicarantesderolar() throws InterruptedException{
 	
 	
 	WebDriverWait block = new WebDriverWait(getDriver(),10);
-	block.until(ExpectedConditions.visibilityOfElementLocated(By.className("modal-content")));
+	block.until(ExpectedConditions.visibilityOfElementLocated(By.className("modal-dialog modal-lg")));
 	getDriver().switchTo().frame("sema");
 	//WebElement pan;
 	//pan = pan.findElement(By.id("criar-novo-orcamento"));
