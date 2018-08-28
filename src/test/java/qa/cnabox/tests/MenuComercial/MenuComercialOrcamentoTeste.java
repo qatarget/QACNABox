@@ -29,9 +29,9 @@ public class MenuComercialOrcamentoTeste extends BaseTest {
 		page.Tempo(2000);
 		page.GerarOrcamento();
 		page.Tempo(2000);
-		page.RolarPagina();
+		page.RolarPaginaOrcamento();
 		page.Tempo(2000);
-		page.Setdatavalidade("20/09/2018");
+		page.Setdatavalidade("20092018");
 		page.Tempo(2000);
 		page.OrcamentoPasso2();
 		page.Tempo(2000);
@@ -39,11 +39,25 @@ public class MenuComercialOrcamentoTeste extends BaseTest {
 		page.Tempo(2000);
 		page.SetModalidade();
 		page.Tempo(2000);
+		page.RolarPagina();
+		page.Tempo(2000);
+		page.Setmodalidadesequencia();
+		page.Tempo(2000);
 		page.Setproximoestagio();
 		page.Tempo(2000);
 		page.SetProximoPasso();
 		page.Tempo(2000);
-		
+		page.RolarPaginaOrcamento();
+		page.Tempo(2000);
+		page.Setcondicaodepagamento();
+		page.Tempo(2000);
+		page.SetMaterial();
+		page.Tempo(2000);
+		page.SetParcelamentoEstagios("12");
+		page.Tempo(2000);
+		page.SetConcluir();
+		page.Tempo(2000);
+		page.SetClicaremvoltar();
 		
 		
 		

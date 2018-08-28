@@ -2,18 +2,16 @@ package qa.cnabox.page.MenuComercial;
 
 
 import qa.cnabox.core.BasePage;
-import sun.awt.ModalExclude;
-
 import static qa.cnabox.core.DriverFactory.getDriver;
+import java.awt.AWTException;
+import java.awt.Robot;
+import java.awt.event.KeyEvent;
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedCondition;
-import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.WebDriverException;
 import org.openqa.selenium.support.ui.Select;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
-import jdk.nashorn.internal.ir.Block;
+
+
 
 
 public class MenuComercialOrcamentoPage extends BasePage {
@@ -76,7 +74,7 @@ public class MenuComercialOrcamentoPage extends BasePage {
 				///**value="2078"-BÁSICO1, value="2062"PRE-SCHOOLGARDEN1, value="2066"YOUNG KIDS1,//// 
 				///**value="2070"KIDS 1, value="2074"TEENS1, value="2088"FAST1**/////
 
-		Select dropdown = new Select(getDriver().findElement(By.id("#EscolaEstagioId")));
+		Select dropdown = new Select(getDriver().findElement(By.id("EscolaEstagioId")));
 		dropdown.selectByValue("2078");
 		Thread.sleep(1000);;
 
@@ -87,7 +85,7 @@ public class MenuComercialOrcamentoPage extends BasePage {
 						///Legenda estágios////
 		///"1"-EXTENSIVO,"2"-INTENSIVO, "3"-PLUS/////
 
-		Select dropdown = new Select(getDriver().findElement(By.id("#ModalidadeId")));
+		Select dropdown = new Select(getDriver().findElement(By.id("ModalidadeId")));
 		dropdown.selectByValue("1");
 		Thread.sleep(1000);;
 	}
@@ -147,17 +145,39 @@ public void Tempo (int Tempo) throws InterruptedException {
 public void SetClicarantesderolar() throws InterruptedException{
 	
 	
-	WebDriverWait block = new WebDriverWait(getDriver(),10);
-	block.until(ExpectedConditions.visibilityOfElementLocated(By.className("modal-dialog modal-lg")));
-	getDriver().switchTo().frame("sema");
-	//WebElement pan;
-	//pan = pan.findElement(By.id("criar-novo-orcamento"));
-}
+ getDriver().findElement(By.cssSelector(".modal-header")).click();
+
+} 
 
 	public void RolarPaginaOrcamento() {
-	((JavascriptExecutor) getDriver()).executeScript("scroll(0,850)");
+		
+		try {
+			Robot robot = new Robot();
+			robot.keyPress(KeyEvent.VK_PAGE_DOWN);
+			robot.keyPress(KeyEvent.VK_PAGE_DOWN);
+			robot.keyRelease(KeyEvent.VK_PAGE_DOWN);
+			robot.keyRelease(KeyEvent.VK_PAGE_DOWN);
+		} 	
+		catch (AWTException ex) {
+		throw new WebDriverException("VK_PAGE_DOWN", ex);
+  
+		}
 }
 
-
+	public void Setmodalidadesequencia() throws InterruptedException{
+		
+			///Legenda estágios////
+			///"1"-EXTENSIVO,"2"-INTENSIVO, "3"-PLUS/////
+		Select dropdown = new Select(getDriver().findElement(By.id("ModalidadeIdSequencia")));
+		dropdown.selectByValue("1");
+		Thread.sleep(1000);
+}
+	
+	public void SetClicaremvoltar() throws InterruptedException{
+		
+		
+		 getDriver().findElement(By.className("btn btn-warning btn-sm")).click();
+		 Thread.sleep(1000);
+		} 
 	
 }
