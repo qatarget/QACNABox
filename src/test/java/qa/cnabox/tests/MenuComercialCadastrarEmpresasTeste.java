@@ -1,8 +1,7 @@
 package qa.cnabox.tests;
 
 import qa.cnabox.core.BaseTest;
-import qa.cnabox.page.MenuComercialCadastrarEmpresasPage;
-
+import qa.cnabox.page.MenuComercial.MenuComercialCadastrarEmpresasPage;
 
 import org.junit.Test;
 

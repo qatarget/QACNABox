@@ -1,4 +1,4 @@
-package qa.cnabox.page;
+package qa.cnabox.page.MenuComercial;
 
 
 import qa.cnabox.core.BasePage;
@@ -126,4 +126,5 @@ public void SetParcelamentoEstagios(String Numerodeparcelas) throws InterruptedE
 	clicarBotaoBy(By.cssSelector("#btnConcluirOrcamento"));
 	Thread.sleep(1000);
 	}
+	
 }

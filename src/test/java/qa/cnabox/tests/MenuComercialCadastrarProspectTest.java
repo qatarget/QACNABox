@@ -1,7 +1,8 @@
 package qa.cnabox.tests;
 
 import qa.cnabox.core.BaseTest;
-import qa.cnabox.page.MenuComercialCadastrarProspectPage;
+import qa.cnabox.page.MenuComercial.MenuComercialCadastrarProspectPage;
+
 import static qa.cnabox.core.DriverFactory.getDriver;
 import org.junit.Test;
 import org.openqa.selenium.JavascriptExecutor;

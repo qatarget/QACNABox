@@ -1,7 +1,8 @@
 package qa.cnabox.tests;
 
 import qa.cnabox.core.BaseTest;
-import qa.cnabox.page.MenuComercialCadastrarParceiroPage;
+import qa.cnabox.page.MenuComercial.MenuComercialCadastrarParceiroPage;
+
 import org.junit.Test;
 
 public class MenuComercialCadastrarParceiroTeste extends BaseTest {

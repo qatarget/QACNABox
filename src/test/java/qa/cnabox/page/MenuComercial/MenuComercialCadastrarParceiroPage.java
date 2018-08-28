@@ -1,4 +1,4 @@
-package qa.cnabox.page;
+package qa.cnabox.page.MenuComercial;
 
 import qa.cnabox.core.BasePage;
 import static qa.cnabox.core.DriverFactory.getDriver;

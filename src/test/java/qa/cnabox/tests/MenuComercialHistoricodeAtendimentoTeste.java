@@ -1,8 +1,7 @@
 package qa.cnabox.tests;
 
 import qa.cnabox.core.BaseTest;
-import qa.cnabox.page.MenuComercialHistoricodeatendimentosPage;
-
+import qa.cnabox.page.MenuComercial.MenuComercialHistoricodeatendimentosPage;
 
 import org.junit.Test;
 
