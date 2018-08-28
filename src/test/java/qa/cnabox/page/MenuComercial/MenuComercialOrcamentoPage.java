@@ -4,6 +4,7 @@ package qa.cnabox.page.MenuComercial;
 import qa.cnabox.core.BasePage;
 import static qa.cnabox.core.DriverFactory.getDriver;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.support.ui.Select;
 
 
@@ -15,7 +16,7 @@ public class MenuComercialOrcamentoPage extends BasePage {
 		Thread.sleep(1000);
 		}
 
-	public void SetClicarHistoricodeatendimento() throws InterruptedException {
+	public void SetClicarOrcamento() throws InterruptedException {
 
 		clicarBotaoBy(By.linkText("Orçamento"));
 		Thread.sleep(1000);
@@ -126,5 +127,11 @@ public void SetParcelamentoEstagios(String Numerodeparcelas) throws InterruptedE
 	clicarBotaoBy(By.cssSelector("#btnConcluirOrcamento"));
 	Thread.sleep(1000);
 	}
+	
+public void Tempo (int Tempo) throws InterruptedException {
+		
+		Thread.sleep(Tempo);
+	}
+
 	
 }

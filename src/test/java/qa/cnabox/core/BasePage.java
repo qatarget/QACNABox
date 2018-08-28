@@ -418,5 +418,10 @@ public class BasePage {
 	
 		return telefoneAleatorio.toString();
 	}
+	
+	public void Rolar() {
+		((IJavaScriptExecutor)GetDriver()).ExecuteScript(rolagem);
+		
+	}
 }
 
