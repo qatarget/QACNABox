@@ -420,7 +420,7 @@ public class BasePage {
 	}
 	
 	public void Rolar() {
-		((IJavaScriptExecutor)GetDriver()).ExecuteScript(rolagem);
+		
 		
 	}
 }

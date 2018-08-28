@@ -2,10 +2,18 @@ package qa.cnabox.page.MenuComercial;
 
 
 import qa.cnabox.core.BasePage;
+import sun.awt.ModalExclude;
+
 import static qa.cnabox.core.DriverFactory.getDriver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedCondition;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import jdk.nashorn.internal.ir.Block;
 
 
 public class MenuComercialOrcamentoPage extends BasePage {
@@ -27,12 +35,14 @@ public class MenuComercialOrcamentoPage extends BasePage {
 
 		clicarBotaoBy(By.cssSelector("[href='\\#criar-novo-orcamento']"));
 		Thread.sleep(1000);
+		
 	}
 
 	public void SetClicaremfiltrar() throws InterruptedException {
-
+		
 		clicarBotaoBy(By.cssSelector("[action='\\/Orcamento\\/CreateModalLoad'] button"));
-		Thread.sleep(1000);
+		Thread.sleep(2000);
+		
 	}
 	public void SelecionarAluno() throws InterruptedException {
 
@@ -131,7 +141,23 @@ public void SetParcelamentoEstagios(String Numerodeparcelas) throws InterruptedE
 public void Tempo (int Tempo) throws InterruptedException {
 		
 		Thread.sleep(Tempo);
+		
 	}
+
+public void SetClicarantesderolar() throws InterruptedException{
+	
+	
+	WebDriverWait block = new WebDriverWait(getDriver(),10);
+	block.until(ExpectedConditions.visibilityOfElementLocated(By.className("modal-content")));
+	getDriver().switchTo().frame("sema");
+	//WebElement pan;
+	//pan = pan.findElement(By.id("criar-novo-orcamento"));
+}
+
+	public void RolarPaginaOrcamento() {
+	((JavascriptExecutor) getDriver()).executeScript("scroll(0,850)");
+}
+
 
 	
 }

@@ -23,9 +23,28 @@ public class MenuComercialOrcamentoTeste extends BaseTest {
 		page.SetClicaremfiltrar();
 		page.Tempo(2000);
 		page.SelecionarAluno();
+		page.SetClicarantesderolar();
+		page.Tempo(2000);
+		page.RolarPaginaOrcamento();
 		page.Tempo(2000);
 		page.GerarOrcamento();
 		page.Tempo(2000);
+		page.RolarPagina();
+		page.Tempo(2000);
+		page.Setdatavalidade("20/09/2018");
+		page.Tempo(2000);
+		page.OrcamentoPasso2();
+		page.Tempo(2000);
+		page.SetEstagios();
+		page.Tempo(2000);
+		page.SetModalidade();
+		page.Tempo(2000);
+		page.Setproximoestagio();
+		page.Tempo(2000);
+		page.SetProximoPasso();
+		page.Tempo(2000);
+		
+		
 		
 		
 		
