@@ -106,4 +106,24 @@ public class MenuComercialOrcamentoPage extends BasePage {
 		dropdown.selectByValue("4");
 		Thread.sleep(1000);
 	}
+	
+	public void SetMaterial() throws InterruptedException{
+		
+		clicarBotaoBy(By.cssSelector(".row.smart-form i"));
+		Thread.sleep(1000);
+	}
+	
+public void SetParcelamentoEstagios(String Numerodeparcelas) throws InterruptedException{
+		
+		clicarBotaoBy(By.cssSelector("#EstagioQtdeParcela"));
+		getDriver().findElement(By.cssSelector("#EstagioQtdeParcela")).clear();
+		Thread.sleep(1000);
+		getDriver().findElement(By.cssSelector("#EstagioQtdeParcela")).sendKeys(Numerodeparcelas);
+	}
+
+	public void SetConcluir() throws InterruptedException{
+	
+	clicarBotaoBy(By.cssSelector("#btnConcluirOrcamento"));
+	Thread.sleep(1000);
+	}
 }
