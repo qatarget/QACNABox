@@ -21,9 +21,21 @@ public class MenuRelatorioComercialMatriculaPage extends BasePage {
 	
 	public void SetClicarSubmenucategoria() throws InterruptedException {
 
-		clicarBotaoBy(By.linkText("Atendimentos"));
+		clicarBotaoBy(By.linkText("Matrículas"));
 		Thread.sleep(1000);
 	}
 
+	
+	public void SetClicarDadosmatricula() throws InterruptedException {
+
+		clicarBotaoBy(By.cssSelector(".label-checkbox-relatorio i"));
+		Thread.sleep(1000);
+	}
+	
+	public void SetClicarPeriodoDE(String Texto) throws InterruptedException {
+
+		clicarBotaoBy(By.cssSelector(""));
+		Thread.sleep(1000);
+		}
 	
 }
