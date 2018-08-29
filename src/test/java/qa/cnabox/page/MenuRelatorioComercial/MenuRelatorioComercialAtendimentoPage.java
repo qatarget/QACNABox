@@ -1,26 +1,15 @@
 package qa.cnabox.page.MenuRelatorioComercial;
 
 import static qa.cnabox.core.DriverFactory.getDriver;
-
-
 import org.openqa.selenium.By;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.remote.Augmenter;
 import org.openqa.selenium.support.ui.Select;
-
-import com.sun.media.sound.Toolkit;
-
 import java.awt.Rectangle;
 import java.awt.Robot;
 import java.awt.image.BufferedImage;
 import java.io.File;
-
 import javax.imageio.ImageIO;
-
 import qa.cnabox.core.BasePage;
-import sun.awt.image.ToolkitImage;
+
 
 public class MenuRelatorioComercialAtendimentoPage extends BasePage {
 
