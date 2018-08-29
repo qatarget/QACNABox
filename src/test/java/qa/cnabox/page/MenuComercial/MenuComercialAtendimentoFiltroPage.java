@@ -3,7 +3,7 @@ package qa.cnabox.page.MenuComercial;
 import static qa.cnabox.core.DriverFactory.getDriver;
 
 import org.junit.Assert;
-import org.junit.Test;
+
 import org.openqa.selenium.By;
 
 public class MenuComercialAtendimentoFiltroPage {
