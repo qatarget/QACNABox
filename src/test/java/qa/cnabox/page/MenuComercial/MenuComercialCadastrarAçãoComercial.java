@@ -1,7 +1,7 @@
 package qa.cnabox.page.MenuComercial;
 
 import qa.cnabox.core.BasePage;
-import static qa.cnabox.core.DriverFactory.getDriver;
+
 
 import org.openqa.selenium.By;
 
