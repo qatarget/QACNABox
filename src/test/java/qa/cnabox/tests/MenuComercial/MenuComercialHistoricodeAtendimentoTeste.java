@@ -21,6 +21,7 @@ public class MenuComercialHistoricodeAtendimentoTeste extends BaseTest {
 		page.SetClicaremfiltrar();
 		page.Tempo(3000);
 		page.SetClicaremPeriodoDE("01022017");
+		page.Tempo(1000);
 		page.SetPeriodoate("01082017");
 		page.Tempo(1000);
 		page.Situaçãodoatendido();

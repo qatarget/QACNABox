@@ -2,27 +2,51 @@ package qa.cnabox.page.MenuRelatorioComercial;
 
 import static qa.cnabox.core.DriverFactory.getDriver;
 
+
 import org.openqa.selenium.By;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.remote.Augmenter;
 import org.openqa.selenium.support.ui.Select;
 
+import com.sun.media.sound.Toolkit;
+
+import java.awt.Rectangle;
+import java.awt.Robot;
+import java.awt.image.BufferedImage;
+import java.io.File;
+
+import javax.imageio.ImageIO;
+
 import qa.cnabox.core.BasePage;
+import sun.awt.image.ToolkitImage;
 
 public class MenuRelatorioComercialAtendimentoPage extends BasePage {
 
-	
-	
-	public void SetclicarMenuComercial() throws InterruptedException {
 
-		clicarBotaoBy(By.cssSelector(".nav-left-bar li:nth-of-type(11) li:nth-of-type(2) .menu-item"));
+	
+	public void SetclicarMenuRelatorio() throws InterruptedException {
+
+		clicarBotaoBy(By.cssSelector(".nav-left-bar li:nth-of-type(11) .nav-title"));
 		Thread.sleep(1000);
 
 	}
 
-	public void SetClicarEmpresas() throws InterruptedException {
+	public void SetClicarSubmenu() throws InterruptedException {
+
+		clicarBotaoBy(By.cssSelector(".nav-left-bar li:nth-of-type(11) li:nth-of-type(2) .menu-item"));
+		Thread.sleep(1000);
+	}
+	
+	public void SetClicarSubmenucategoria() throws InterruptedException {
 
 		clicarBotaoBy(By.linkText("Atendimentos"));
 		Thread.sleep(1000);
 	}
+	
+	
+	
 	
 	
 	public void SetSelecionarPeriodoDe(String Texto) throws InterruptedException{
@@ -43,8 +67,9 @@ public class MenuRelatorioComercialAtendimentoPage extends BasePage {
 	
 								////Legenda///
 		///** 3- ALUNO, 1-CADASTRO, 2-Prospect, 4-Empresa, 5-Ex-Aluno, 6-Suspenso///
-	
-	Select dropdown = new Select(getDriver().findElement(By.cssSelector(".select2-selection--multiple .select2-selection__rendered")));
+	clicarBotaoBy(By.cssSelector(".select2-selection--multiple .select2-selection__rendered"));
+	Thread.sleep(1000);	
+	Select dropdown = new Select(getDriver().findElement(By.cssSelector("#TipoSituacaoPessoaEscola")));
 	dropdown.selectByValue(Texto);
 	Thread.sleep(1000);
 	
@@ -62,4 +87,30 @@ public class MenuRelatorioComercialAtendimentoPage extends BasePage {
 		
 	}
 	
+	public void SetClicaremExportar () throws InterruptedException{
+		
+		clicarBotaoBy(By.id("btnExportarRelatorioAtendimentos"));
+		Thread.sleep(8000);
+	}
+	
+	
+	public void Tempo (int Tempo) throws InterruptedException {
+		
+		Thread.sleep(Tempo);
+	}
+	
+	 public void takeScreenshot(){
+		  
+		 try{
+		        Thread.sleep(10000);
+		        long id = Thread.currentThread().getId();
+		        BufferedImage image = new Robot().createScreenCapture(new Rectangle(
+		            java.awt.Toolkit.getDefaultToolkit().getScreenSize()));
+		        ImageIO.write(image, "jpg", new File("./target/surefire-reports/"
+		            + id + "/screenshot.jpg"));
+		    }
+		    catch( Exception e ) {
+		        e.printStackTrace();
+		    }
+		}
 }

@@ -4,7 +4,6 @@ import static qa.cnabox.core.DriverFactory.getDriver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 
-
 public class MenuAdministrativoConsultadeEstoquePage extends BasePage {
 
 
