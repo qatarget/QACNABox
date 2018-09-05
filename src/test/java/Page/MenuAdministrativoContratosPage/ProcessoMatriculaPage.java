@@ -1,6 +1,5 @@
 package Page.MenuAdministrativoContratosPage;
 
-
 import static qa.cnabox.core.DriverFactory.getDriver;
 
 import java.awt.AWTException;
@@ -17,12 +16,12 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import qa.cnabox.core.BasePage;
 
-
 public class ProcessoMatriculaPage extends BasePage {
 
 	public void SetClicarMenu() {
 
-		clicarBotaoBy(By.xpath("//div[@id='menu-lateral']/ul[@class='nav-left-bar']/li[6]/a[@href='#']/span[.='Comercial']"));
+		clicarBotaoBy(
+				By.xpath("//div[@id='menu-lateral']/ul[@class='nav-left-bar']/li[6]/a[@href='#']/span[.='Comercial']"));
 	}
 
 	public void SetClicarSubMenu() {
@@ -32,9 +31,9 @@ public class ProcessoMatriculaPage extends BasePage {
 
 	public void AguardaCarregarPagina() throws InterruptedException {
 		Thread.sleep(3000);
-	
+
 	}
-	
+
 	public void SetClicarCadastrarProspect() {
 		clicarBotaoBy(By.xpath("/html//button[@id='btnCreateNewProspect']"));
 	}
@@ -88,7 +87,7 @@ public class ProcessoMatriculaPage extends BasePage {
 
 	}
 
-	public void SetRolarAPagina(){
+	public void SetRolarAPagina() {
 
 		JavascriptExecutor js = (JavascriptExecutor) getDriver();
 		js.executeScript("window.scrollBy(0,200)", "");
@@ -115,52 +114,52 @@ public class ProcessoMatriculaPage extends BasePage {
 				By.xpath("/html//table[@id='datatable_tabletools']/tbody/tr[1]/td[7]/label[@class='checkbox']/i"));
 	}
 
-	public void BuscaCPF()  throws InterruptedException{
-			
-		Thread.sleep(2000);
-			try {
-					Robot robot = new Robot();
-					robot.keyPress(KeyEvent.VK_CONTROL);
-					robot.keyPress(KeyEvent.VK_T);
-					robot.keyRelease(KeyEvent.VK_CONTROL);
-					robot.keyRelease(KeyEvent.VK_T);
-				} 	
-				catch (AWTException ex) {
-				throw new WebDriverException("Erro ao digitar CTRL + T", ex);
-	      
-				}
-				WebDriverWait wait = new WebDriverWait(getDriver(), 5);
-				wait.until(ExpectedConditions.numberOfWindowsToBe(2));
+	public void BuscaCPF() throws InterruptedException {
 
-	        for (String handle : getDriver().getWindowHandles()) {
-	        	getDriver().switchTo().window(handle);}
-		    Thread.sleep(1000);
-	        //// Sempre trocar para a pagina desejada como por exemplo: cpf ou cnpj ///
-		    getDriver().navigate().to("https://www.4devs.com.br/gerador_de_cpf");
-	        Thread.sleep(2000);
-	        getDriver().findElement(By.cssSelector("[type='button']")).click();
-	        Thread.sleep(2000);
-	       
-	    ////// nesse comando o selenium armazena a variavel atribuida no campo texto_cpf////
-	        String Textocampo = ObterTextoCampoId("texto_cpf");
-	     Thread.sleep(2000);
-	     getDriver().close();
-	     Thread.sleep(6000);
-	     
-	     ////// Aqui ele vai retornar para a pagina do BOX////
-	     
-	     for (String CNABox : getDriver().getWindowHandles()) {
-	     getDriver().switchTo().window(CNABox);}
-	     Thread.sleep(2000);
-	     getDriver().findElement(By.id("CPF_CNPJ")).click();
-	     Thread.sleep(3000);
-	     
-	     //// aqui ele vai escrever a variavel armazenada anteriormente///
-	     getDriver().findElement(By.id("CPF_CNPJ")).sendKeys(Textocampo);
-	     
+		Thread.sleep(2000);
+		try {
+			Robot robot = new Robot();
+			robot.keyPress(KeyEvent.VK_CONTROL);
+			robot.keyPress(KeyEvent.VK_T);
+			robot.keyRelease(KeyEvent.VK_CONTROL);
+			robot.keyRelease(KeyEvent.VK_T);
+		} catch (AWTException ex) {
+			throw new WebDriverException("Erro ao digitar CTRL + T", ex);
+
+		}
+		WebDriverWait wait = new WebDriverWait(getDriver(), 5);
+		wait.until(ExpectedConditions.numberOfWindowsToBe(2));
+
+		for (String handle : getDriver().getWindowHandles()) {
+			getDriver().switchTo().window(handle);
+		}
+		Thread.sleep(1000);
+		//// Sempre trocar para a pagina desejada como por exemplo: cpf ou cnpj ///
+		getDriver().navigate().to("https://www.4devs.com.br/gerador_de_cpf");
+		Thread.sleep(2000);
+		getDriver().findElement(By.cssSelector("[type='button']")).click();
+		Thread.sleep(2000);
+
+		////// nesse comando o selenium armazena a variavel atribuida no campo
+		////// texto_cpf////
+		String Textocampo = ObterTextoCampoId("texto_cpf");
+		Thread.sleep(2000);
+		getDriver().close();
+		Thread.sleep(6000);
+
+		////// Aqui ele vai retornar para a pagina do BOX////
+
+		for (String CNABox : getDriver().getWindowHandles()) {
+			getDriver().switchTo().window(CNABox);
+		}
+		Thread.sleep(2000);
+		getDriver().findElement(By.id("CPF_CNPJ")).click();
+		Thread.sleep(3000);
+
+		//// aqui ele vai escrever a variavel armazenada anteriormente///
+		getDriver().findElement(By.id("CPF_CNPJ")).sendKeys(Textocampo);
+
 	}
-		
-	
 
 	public void SetEscreveRG() {
 		escreveId("RG_IE", "452484863");
@@ -177,6 +176,12 @@ public class ProcessoMatriculaPage extends BasePage {
 		WebElement campanha = getDriver().findElement(By.xpath("/html//select[@id='CampanhaId']"));
 		Select comboCampanha = new Select(campanha);
 		comboCampanha.selectByValue(numeroCampanha);
+	}
+
+	public void SetSelecionarAtendimento() {
+
+		clicarBotaoBy(By.cssSelector("#row-atendimento-receptivo .radio:nth-of-type(2) i"));
+
 	}
 
 	public void SetSelecionarTipoAtendimento() {
@@ -202,11 +207,50 @@ public class ProcessoMatriculaPage extends BasePage {
 	public void SetRolarPaginaParaCima() {
 		rolarParaCimaPageUP();
 	}
-	
+
 	public void SetoRolarCimaSemPageUP() {
 		JavascriptExecutor js = (JavascriptExecutor) getDriver();
 		js.executeScript("window.scrollBy(0,-1500)", "");
 	}
+
+	public void BuscaCEP() throws InterruptedException {
+
+		Thread.sleep(2000);
+		getDriver().findElement(By.id("PessoaEscola_Endereco_CEP")).click();
+		escreveTexto(By.id("PessoaEscola_Endereco_CEP"), GeraCEP());
+		Thread.sleep(1000);
+
+	}
+
+	public void RolarPaginaPageDown() {
+
+		try {
+			Robot robot = new Robot();
+			robot.keyPress(KeyEvent.VK_PAGE_DOWN);
+			robot.keyRelease(KeyEvent.VK_PAGE_DOWN);
+		} catch (AWTException ex) {
+			throw new WebDriverException("VK_PAGE_DOWN", ex);
+
+		}
+	}
+
+	public void RolarPaginaPageUp() {
+
+		try {
+			Robot robot = new Robot();
+			robot.keyPress(KeyEvent.VK_PAGE_UP);
+			robot.keyPress(KeyEvent.VK_PAGE_UP);
+			robot.keyRelease(KeyEvent.VK_PAGE_UP);
+			robot.keyRelease(KeyEvent.VK_PAGE_UP);
+		} catch (AWTException ex) {
+			throw new WebDriverException("VK_PAGE_UP", ex);
+
+		}
+	}
 	
-	
+	public void ClicarCampoCep() throws InterruptedException {
+		clicarBotaoBy(By.cssSelector("#widget-grid fieldset:nth-child(8) [autocomplete]"));
+		Thread.sleep(1000);
+	}
+
 }
