@@ -242,6 +242,10 @@ public class ProcessoMatriculaPage extends BasePage {
 			robot.keyPress(KeyEvent.VK_PAGE_UP);
 			robot.keyRelease(KeyEvent.VK_PAGE_UP);
 			robot.keyRelease(KeyEvent.VK_PAGE_UP);
+			robot.keyPress(KeyEvent.VK_PAGE_UP);
+			robot.keyPress(KeyEvent.VK_PAGE_UP);
+			robot.keyRelease(KeyEvent.VK_PAGE_UP);
+			robot.keyRelease(KeyEvent.VK_PAGE_UP);
 		} catch (AWTException ex) {
 			throw new WebDriverException("VK_PAGE_UP", ex);
 
@@ -252,5 +256,14 @@ public class ProcessoMatriculaPage extends BasePage {
 		clicarBotaoBy(By.cssSelector("#widget-grid fieldset:nth-child(8) [autocomplete]"));
 		Thread.sleep(1000);
 	}
-
+	public void ClicarCampoAtendimento() throws InterruptedException {
+		clicarBotaoBy(By.cssSelector("#row-tipo-atendimento .radio:nth-of-type(3) i"));
+		Thread.sleep(1000);
+	}
+	
+	public void ClicarCampoDescrição() throws InterruptedException {
+		clicarBotaoBy(By.id("Descricao"));
+		Thread.sleep(1000);
+		escreveTexto(By.id("Descricao"), GerarTituloAleatorio());
+	}
 }

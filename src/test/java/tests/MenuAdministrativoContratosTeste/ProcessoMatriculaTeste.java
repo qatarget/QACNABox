@@ -24,6 +24,9 @@ public class ProcessoMatriculaTeste extends BaseTest {
 		page.AguardaCarregarPagina();
 		page.SetEscreveNomeAluno();
 		page.SetEscreveEmail();
+		page.ClicarCampoAtendimento();
+		page.AguardaCarregarPagina();
+		page.ClicarCampoDescrição();
 		page.SetSexoMasculino();
 		page.SetDataNascimento(" 14111986 ");
 		page.SetEstadoCivil("3");
@@ -52,14 +55,13 @@ public class ProcessoMatriculaTeste extends BaseTest {
 		page.SetSelecionarCampanha("8");
 		page.AguardaCarregarPagina();
 		page.RolarPaginaPageUp();
-		page.RolarPaginaPageUp();
 		page.AguardaCarregarPagina();
-		page.SetSelecionarTipoAtendimento();
-		page.AguardaCarregarPagina();
-		page.SetSelecionarAcaoRealizada();
-		page.AguardaCarregarPagina();
-		page.SetEscreverDescricao();
-		page.AguardaCarregarPagina();
+		
+		
+		
+		
+		
+		
 		//page.SetSalvar();
 	
 	}
