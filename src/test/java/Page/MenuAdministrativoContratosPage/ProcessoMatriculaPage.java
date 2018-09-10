@@ -301,14 +301,25 @@ public class ProcessoMatriculaPage extends BasePage {
 		
 	}
 		
-		public void Setmodalidade(String numeromodalidade)throws InterruptedException {
+		public void SetEstagio(String numeromodalidade)throws InterruptedException {
 			
 			clicarBotaoBy(By.id("EscolaEstagioId"));
 			Thread.sleep(2000);
-			WebElement modalidade = getDriver().findElement(By.xpath("/html//select[@id='CampanhaId']"));
+			WebElement modalidade = getDriver().findElement(By.id("EscolaEstagioId"));
 			Select combomodalidade = new Select(modalidade);
 			combomodalidade.selectByValue(numeromodalidade);
 			
 		}
+		
+		public void Setmodalidade(String numeromodalidade)throws InterruptedException {
+			
+			clicarBotaoBy(By.id("ModalidadeId"));
+			Thread.sleep(2000);
+			WebElement modalidade = getDriver().findElement(By.id("ModalidadeId"));
+			Select combomodalidade = new Select(modalidade);
+			combomodalidade.selectByValue(numeromodalidade);
+			
+		}
+		
 
 }

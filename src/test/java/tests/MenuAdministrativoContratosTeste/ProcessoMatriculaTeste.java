@@ -63,12 +63,19 @@ public class ProcessoMatriculaTeste extends BaseTest {
 		page.ClicarSalvar();
 		page.Tempo(4000);
 		page.RolarPagina();
+		page.RolarPaginaPageDown();
 		page.Tempo(4000);
 		page.ClicarProximoPasso1();
 		page.Tempo(3000);
 		page.RolarPagina();
 		page.SetProximo3();
 		page.Tempo(3000);
+		
+		//// legenda de estágios = 2078-Basico, 2066-Yong, 2062-Pre-School, 2070-Kids, 2074-TEENS, 2088-Fast///
+		page.SetEstagio("2078");
+		
+		// Legenda de modalidade= 1 Extensivo, 2 intensivo, 3 plus////
+		page.Setmodalidade("1");
 		
 		
 		
