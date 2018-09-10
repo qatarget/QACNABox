@@ -92,6 +92,7 @@ public class ProcessoMatriculaTeste extends BaseTest {
 		page.Setdata("01102018");
 		page.Tempo(4000);
 		page.RolarPagina();
+		page.Tempo(4000);
 		page.Setproximopassofinal();
 		page.Tempo(4000);
 		page.SetConcluir();

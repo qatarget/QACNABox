@@ -358,13 +358,13 @@ public class ProcessoMatriculaPage extends BasePage {
 		
 		public void Setdata(String proximadata)throws InterruptedException {
 			
-			clicarBotaoBy(By.cssSelector("#section-datavencimento-unica-proximo-pagamento .input"));
+			clicarBotaoBy(By.cssSelector("#DataVencimentoUnicaProximoPagamento"));
 			Thread.sleep(2000);
-			getDriver().findElement(By.cssSelector("#section-datavencimento-unica-proximo-pagamento .input")).clear();
+			getDriver().findElement(By.cssSelector("#DataVencimentoUnicaProximoPagamento")).clear();
 			Thread.sleep(2000);
-			clicarBotaoBy(By.cssSelector("#section-datavencimento-unica-proximo-pagamento .input"));
+			clicarBotaoBy(By.cssSelector("#DataVencimentoUnicaProximoPagamento"));
 			Thread.sleep(2000);
-			getDriver().findElement(By.cssSelector("#section-datavencimento-unica-proximo-pagamento .input")).sendKeys(proximadata);
+			getDriver().findElement(By.cssSelector("#DataVencimentoUnicaProximoPagamento")).sendKeys(proximadata);
 			Thread.sleep(2000);
 		}
 		
