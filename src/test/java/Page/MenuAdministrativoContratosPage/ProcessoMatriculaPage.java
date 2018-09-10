@@ -166,13 +166,14 @@ public class ProcessoMatriculaPage extends BasePage {
 	}
 
 	public void SetSelecionarMidia(String numeroMidia) {
-		WebElement midia = getDriver().findElement(By.cssSelector(
-				"#widget-grid > .row:nth-child(1) > [class='col-md-6']:nth-child(1) .jarviswidget.jarviswidget-color-darken > div:nth-child(2) .widget-body > .smart-form:nth-child(1) > fieldset:nth-child(12) > .row:nth-child(5) > [class='col col-6']:nth-child(1) .select [data-val='true']"));
+		getDriver().findElement(By.xpath("/html//select[@id='MidiaId']")).click();
+		WebElement midia = getDriver().findElement(By.xpath("/html//select[@id='MidiaId']"));
 		Select comboMidia = new Select(midia);
 		comboMidia.selectByValue(numeroMidia);
 	}
 
 	public void SetSelecionarCampanha(String numeroCampanha) {
+		getDriver().findElement(By.xpath("/html//select[@id='CampanhaId']")).click();
 		WebElement campanha = getDriver().findElement(By.xpath("/html//select[@id='CampanhaId']"));
 		Select comboCampanha = new Select(campanha);
 		comboCampanha.selectByValue(numeroCampanha);
@@ -242,10 +243,7 @@ public class ProcessoMatriculaPage extends BasePage {
 			robot.keyPress(KeyEvent.VK_PAGE_UP);
 			robot.keyRelease(KeyEvent.VK_PAGE_UP);
 			robot.keyRelease(KeyEvent.VK_PAGE_UP);
-			robot.keyPress(KeyEvent.VK_PAGE_UP);
-			robot.keyPress(KeyEvent.VK_PAGE_UP);
-			robot.keyRelease(KeyEvent.VK_PAGE_UP);
-			robot.keyRelease(KeyEvent.VK_PAGE_UP);
+		
 		} catch (AWTException ex) {
 			throw new WebDriverException("VK_PAGE_UP", ex);
 
@@ -266,4 +264,51 @@ public class ProcessoMatriculaPage extends BasePage {
 		Thread.sleep(1000);
 		escreveTexto(By.id("Descricao"), GerarTituloAleatorio());
 	}
+	
+	public void ClicarSalvar()throws InterruptedException {
+		
+		clicarBotaoBy(By.cssSelector(".form-group [type='button']:nth-of-type(2)"));
+		Thread.sleep(1000);
+	}
+	
+	public void ClicarMatricula()throws InterruptedException {
+		
+		clicarBotaoBy(By.cssSelector("#row-tipo-acao .radio:nth-of-type(6) i"));
+		Thread.sleep(1000);
+	}
+
+
+	public void ClicarProximoPasso1()throws InterruptedException {
+		
+		clicarBotaoBy(By.id("btnAlunoSave"));
+		Thread.sleep(1000);
+	}
+	
+	public void Tempo (int Tempo) throws InterruptedException {
+		
+		Thread.sleep(Tempo);
+	}
+
+	public void RolarPagina() {
+	((JavascriptExecutor) getDriver()).executeScript("scroll(0,1200)");
+	
+	}
+
+		public void SetProximo3()throws InterruptedException {
+		
+		clicarBotaoBy(By.id("btnDocumentoSave"));
+		Thread.sleep(2000);
+		
+	}
+		
+		public void Setmodalidade(String numeromodalidade)throws InterruptedException {
+			
+			clicarBotaoBy(By.id("EscolaEstagioId"));
+			Thread.sleep(2000);
+			WebElement modalidade = getDriver().findElement(By.xpath("/html//select[@id='CampanhaId']"));
+			Select combomodalidade = new Select(modalidade);
+			combomodalidade.selectByValue(numeromodalidade);
+			
+		}
+
 }

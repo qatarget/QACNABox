@@ -2,9 +2,8 @@ package tests.MenuAdministrativoContratosTeste;
 
 import qa.cnabox.core.BaseTest;
 
-import static qa.cnabox.core.DriverFactory.getDriver;
 import org.junit.Test;
-import org.openqa.selenium.JavascriptExecutor;
+
 
 import Page.MenuAdministrativoContratosPage.ProcessoMatriculaPage;;
 
@@ -50,12 +49,26 @@ public class ProcessoMatriculaTeste extends BaseTest {
 		page.BuscaCPF();
 		page.AguardaCarregarPagina();
 		page.RolarPaginaPageDown();
+		page.AguardaCarregarPagina();
 		page.SetSelecionarMidia("41");
 		page.AguardaCarregarPagina();
-		page.SetSelecionarCampanha("8");
+		page.SetSelecionarCampanha("9");
 		page.AguardaCarregarPagina();
-		page.RolarPaginaPageUp();
+		page.SetoRolarCimaSemPageUP();
 		page.AguardaCarregarPagina();
+		page.SetoRolarCimaSemPageUP();
+		page.AguardaCarregarPagina();
+		page.ClicarMatricula();
+		page.AguardaCarregarPagina();
+		page.ClicarSalvar();
+		page.Tempo(4000);
+		page.RolarPagina();
+		page.Tempo(4000);
+		page.ClicarProximoPasso1();
+		page.Tempo(3000);
+		page.RolarPagina();
+		page.SetProximo3();
+		page.Tempo(3000);
 		
 		
 		
