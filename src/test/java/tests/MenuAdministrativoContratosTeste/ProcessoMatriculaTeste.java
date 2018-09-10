@@ -61,12 +61,12 @@ public class ProcessoMatriculaTeste extends BaseTest {
 		page.ClicarMatricula();
 		page.AguardaCarregarPagina();
 		page.ClicarSalvar();
-		page.Tempo(4000);
+		page.Tempo(5000);
 		page.RolarPagina();
 		page.RolarPaginaPageDown();
 		page.Tempo(4000);
 		page.ClicarProximoPasso1();
-		page.Tempo(3000);
+		page.Tempo(4000);
 		page.RolarPagina();
 		page.SetProximo3();
 		page.Tempo(3000);
@@ -76,7 +76,26 @@ public class ProcessoMatriculaTeste extends BaseTest {
 		
 		// Legenda de modalidade= 1 Extensivo, 2 intensivo, 3 plus////
 		page.Setmodalidade("1");
-		
+		page.Tempo(2000);
+		page.SetProximoestagio();
+		page.Tempo(2000);
+		page.RolarPagina();
+		page.Tempo(2000);
+		page.Setproximopasso();
+		page.Tempo(4000);
+		page.RolarPagina();
+		page.Tempo(2000);
+		page.SetFormadePG("6");
+		page.Tempo(2000);
+		page.SetParcelas("12");
+		page.Tempo(2000);
+		page.Setdata("01102018");
+		page.Tempo(4000);
+		page.RolarPagina();
+		page.Setproximopassofinal();
+		page.Tempo(4000);
+		page.SetConcluir();
+		page.Tempo(4000);
 		
 		
 		

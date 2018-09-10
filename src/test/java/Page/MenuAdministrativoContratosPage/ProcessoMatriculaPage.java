@@ -321,5 +321,66 @@ public class ProcessoMatriculaPage extends BasePage {
 			
 		}
 		
+		
+		public void SetProximoestagio()throws InterruptedException {
+			
+			clicarBotaoBy(By.cssSelector(".default td:nth-of-type(1) i"));
+			Thread.sleep(2000);
+			
+		}
 
+		public void Setproximopasso()throws InterruptedException {
+			
+			clicarBotaoBy(By.id("btnDocumentoEstagioSave"));
+			Thread.sleep(2000);
+			
+		}
+		public void SetFormadePG(String forma)throws InterruptedException {
+			
+			clicarBotaoBy(By.id("FormaPagamentoIdUnica"));
+			Thread.sleep(2000);
+			WebElement Formapg = getDriver().findElement(By.id("FormaPagamentoIdUnica"));
+			Select comboforma = new Select(Formapg);
+			comboforma.selectByValue(forma);
+		}
+		
+		public void SetParcelas(String numero)throws InterruptedException {
+			
+			clicarBotaoBy(By.id("NumeroParcelaUnica"));
+			Thread.sleep(2000);
+			getDriver().findElement(By.id("NumeroParcelaUnica")).clear();
+			Thread.sleep(2000);
+			clicarBotaoBy(By.id("NumeroParcelaUnica"));
+			Thread.sleep(2000);
+			escreveId("NumeroParcelaUnica", numero);
+			Thread.sleep(2000);
+		}
+		
+		public void Setdata(String proximadata)throws InterruptedException {
+			
+			clicarBotaoBy(By.cssSelector("#section-datavencimento-unica-proximo-pagamento .input"));
+			Thread.sleep(2000);
+			getDriver().findElement(By.cssSelector("#section-datavencimento-unica-proximo-pagamento .input")).clear();
+			Thread.sleep(2000);
+			clicarBotaoBy(By.cssSelector("#section-datavencimento-unica-proximo-pagamento .input"));
+			Thread.sleep(2000);
+			getDriver().findElement(By.cssSelector("#section-datavencimento-unica-proximo-pagamento .input")).sendKeys(proximadata);
+			Thread.sleep(2000);
+		}
+		
+		
+		public void Setproximopassofinal()throws InterruptedException {
+			
+			clicarBotaoBy(By.id("btnCondicoesFinanceirasSave"));
+			Thread.sleep(2000);
+			
+		}
+		
+		public void SetConcluir()throws InterruptedException {
+			
+			clicarBotaoBy(By.id("btnGerarContrato"));
+			Thread.sleep(2000);
+			
+		}
+		
 }
