@@ -405,15 +405,16 @@ public class ProcessoMatriculaPage extends BasePage {
 		
 		public void SetBotãoCaixa()throws InterruptedException {
 			
-			clicarBotaoBy(By.cssSelector(".btnCaixaContrato .dropdown-toggle"));
+			clicarBotaoBy(By.cssSelector(".btnCaixaContrato"));
 			Thread.sleep(2000);
 			
 		}
 		
 		public void SetGerarBoletos() throws InterruptedException {
-			
-			clicarBotaoBy(By.cssSelector("#btnCaixaContrato li:nth-of-type(3)"));
+			getDriver().switchTo().frame(0);
+			clicarBotaoBy(By.linkText("Gerar Boletos"));
 			Thread.sleep(2000);
+			
 		}
 		
 		public void SetLayout(String forma)throws InterruptedException {

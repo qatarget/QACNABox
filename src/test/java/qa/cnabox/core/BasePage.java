@@ -168,7 +168,7 @@ public class BasePage {
 				"Carolina", "Cileia", "Debora", "Edna", "Ellen", "Eveline", "Fabio", "Fernanda", "Gesiele", "Hellen",
 				"Isabela", "Joice", "Joseense" };
 		String[] arroba = { "@" };
-		String[] tag = { "targetqa" };
+		String[] tag = { "Gmail" };
 		String[] complemento = { ".com.br" };
 		StringBuilder emailAleatorio = new StringBuilder();
 		emailAleatorio.append(nomes[new Random().nextInt(29)]).append(arroba[new Random().nextInt(1)])
