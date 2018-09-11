@@ -1,5 +1,6 @@
 package Page.MenuAdministrativoContratosPage;
 
+import static org.junit.Assert.assertEquals;
 import static qa.cnabox.core.DriverFactory.getDriver;
 
 import java.awt.AWTException;
@@ -322,10 +323,15 @@ public class ProcessoMatriculaPage extends BasePage {
 		}
 		
 		
-		public void SetProximoestagio()throws InterruptedException {
+		public void SetProximoestagio(String numeromodalidade)throws InterruptedException {
 			
 			clicarBotaoBy(By.cssSelector(".default td:nth-of-type(1) i"));
 			Thread.sleep(2000);
+			clicarBotaoBy(By.id("ModalidadeIdSequencia"));
+			Thread.sleep(2000);
+			WebElement modalidade = getDriver().findElement(By.id("ModalidadeIdSequencia"));
+			Select combomodalidade = new Select(modalidade);
+			combomodalidade.selectByValue(numeromodalidade);
 			
 		}
 
@@ -383,4 +389,77 @@ public class ProcessoMatriculaPage extends BasePage {
 			
 		}
 		
+		public void SetObservacao()throws InterruptedException {
+			
+			clicarBotaoBy(By.id("ObservacoesContrato"));
+			Thread.sleep(2000);
+			
+		}
+		
+		public void SetTemplante()throws InterruptedException {
+			
+			clicarBotaoBy(By.id("TemplateId"));
+			Thread.sleep(2000);
+			
+		}
+		
+		public void SetBotãoCaixa()throws InterruptedException {
+			
+			clicarBotaoBy(By.cssSelector(".btnCaixaContrato .dropdown-toggle"));
+			Thread.sleep(2000);
+			
+		}
+		
+		public void SetGerarBoletos() throws InterruptedException {
+			
+			clicarBotaoBy(By.linkText("Gerar Boletos"));
+			Thread.sleep(2000);
+		}
+		
+		public void SetLayout(String forma)throws InterruptedException {
+			
+			clicarBotaoBy(By.id("TipoLayoutBoletoId"));
+			Thread.sleep(2000);
+			WebElement Formapg = getDriver().findElement(By.id("TipoLayoutBoletoId"));
+			Select comboforma = new Select(Formapg);
+			comboforma.selectByValue(forma);
+		}
+			
+		
+		public void Setmodalidadeboleto(String forma)throws InterruptedException {
+			
+			clicarBotaoBy(By.id("TipoBoleto"));
+			Thread.sleep(2000);
+			WebElement Formapg = getDriver().findElement(By.id("TipoBoleto"));
+			Select comboforma = new Select(Formapg);
+			comboforma.selectByValue(forma);
+		}
+        
+		
+		public void Settipoconta (String Conta) throws InterruptedException {
+			
+			clicarBotaoBy(By.id("ContaCorrenteId"));
+			Thread.sleep(2000);
+			WebElement Contapg = getDriver().findElement(By.id("ContaCorrenteId"));
+			Select comboConta = new Select(Contapg);
+			comboConta.selectByValue(Conta);
+		
+		}
+		
+		public void SetCarteiraID (String Carteira) throws InterruptedException {
+			
+			clicarBotaoBy(By.id("ContaCorrenteCarteiraId"));
+			Thread.sleep(2000);
+			WebElement Carteirapg = getDriver().findElement(By.id("ContaCorrenteCarteiraId"));
+			Select comboCarteira = new Select(Carteirapg);
+			comboCarteira.selectByValue(Carteira);
+		
+		}
+		
+		public void SetBotãoGerar()throws InterruptedException {
+			
+			clicarBotaoBy(By.cssSelector("btnGerarBoletos"));
+			Thread.sleep(2000);
+			
+		}
 }

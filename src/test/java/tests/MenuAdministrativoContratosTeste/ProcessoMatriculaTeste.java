@@ -76,7 +76,7 @@ public class ProcessoMatriculaTeste extends BaseTest {
 		// Legenda de modalidade= 1 Extensivo, 2 intensivo, 3 plus////
 		page.Setmodalidade("1");
 		page.Tempo(2000);
-		page.SetProximoestagio();
+		page.SetProximoestagio("1");
 		page.Tempo(2000);
 		page.RolarPagina();
 		page.Tempo(2000);
@@ -89,21 +89,45 @@ public class ProcessoMatriculaTeste extends BaseTest {
 		page.SetParcelas("12");
 		page.Tempo(2000);
 		page.Setdata("01102018");
-		page.Tempo(4000);
+		page.Tempo(3000);
 		page.RolarPagina();
-		page.Tempo(5000);
+		page.Tempo(3000);
 		page.Setproximopassofinal();
 		page.Tempo(5000);
 		page.RolarPaginaPageDown();
-		page.Tempo(6000);
+		page.Tempo(5000);
+		page.SetObservacao();
+		page.Tempo(5000);
+		page.RolarPaginaPageDown();
+		page.Tempo(3000);
+		page.SetTemplante();
+		page.Tempo(4000);
+		page.RolarPaginaPageDown();
+		page.Tempo(4000);
 		page.SetConcluir();
 		page.Tempo(4000);
+		page.RolarPaginaPageDown();
+		page.Tempo(2000);
+		page.SetBotãoCaixa();
+		page.Tempo(2000);
+		page.SetBotãoGerar();
+		page.Tempo(2000);
+		page.RolarPaginaPageDown();
+		page.Tempo(2000);
+		///Legenda 1- Comum, 2-Carnê///
+		page.SetLayout("2");
+		page.Tempo(2000);
+		////Legenda 1- Sem registro, 2-Com registro ///
+		page.Setmodalidadeboleto("2");
+		page.Tempo(2000);
+		//// Legenda Informe a contaConrrete com o seu respectivo ID Cadastrado no Box.///
+		page.Settipoconta("1016");
+		page.Tempo(2000);
+		page.SetCarteiraID("1382");
+		page.Tempo(3000);
+		page.SetBotãoGerar();
 		
-		
-		
-		
-		
-		//page.SetSalvar();
+	
 	
 	}
 }
