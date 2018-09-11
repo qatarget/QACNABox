@@ -1,7 +1,13 @@
 package Page.MenuAdministrativo;
 
 import static qa.cnabox.core.DriverFactory.getDriver;
+
+import java.awt.AWTException;
+import java.awt.Robot;
+import java.awt.event.KeyEvent;
+
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriverException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 
@@ -15,7 +21,7 @@ public class MenuAdministrativoContratoPage extends BasePage {
 	}
 	
 	public void SetClicarContratos() throws InterruptedException {
-		clicarBotaoBy(By.cssSelector(".nav-left-bar li:nth-of-type(7) > .sub-menu:nth-child(2) > li:nth-of-type(3) .triggere"));
+		clicarBotaoBy(By.cssSelector(".nav-left-bar li:nth-of-type(7) > .sub-menu:nth-child(2) > li:nth-of-type(3)"));
 		Thread.sleep(2000);
 	}
 	
@@ -34,20 +40,24 @@ public class MenuAdministrativoContratoPage extends BasePage {
 		Thread.sleep(2000);
 	}
 	
+	public void RolarPaginaPageDown() {
+
+		try {
+			Robot robot = new Robot();
+			robot.keyPress(KeyEvent.VK_PAGE_DOWN);
+			robot.keyPress(KeyEvent.VK_PAGE_DOWN);
+			robot.keyRelease(KeyEvent.VK_PAGE_DOWN);
+			robot.keyRelease(KeyEvent.VK_PAGE_DOWN);
+		} catch (AWTException ex) {
+			throw new WebDriverException("VK_PAGE_DOWN", ex);
+
+		}
+	}
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+	public void SetbotãoAcoes() throws InterruptedException {
+		clicarBotaoBy(By.cssSelector("tbody tr:nth-of-type(2) .text-center .fa-search"));
+		Thread.sleep(2000);
+	}
 	
 	
 	public void SetBotãoCaixa()throws InterruptedException {
@@ -58,9 +68,11 @@ public class MenuAdministrativoContratoPage extends BasePage {
 	}
 	
 	public void SetGerarBoletos() throws InterruptedException {
-		getDriver().switchTo().frame(0);
-		clicarBotaoBy(By.linkText("Gerar Boletos"));
+		
+		clicarBotaoBy(By.cssSelector("#btnCaixaContrato li:nth-of-type(3)"));
 		Thread.sleep(2000);
+		//clicarBotaoBy(By.linkText("Gerar Boletos"));
+		//Thread.sleep(2000);
 		
 	}
 	
@@ -110,6 +122,16 @@ public class MenuAdministrativoContratoPage extends BasePage {
 		Thread.sleep(2000);
 		
 	}
-	
+		public void Tempo (int Tempo) throws InterruptedException {
+		
+		Thread.sleep(Tempo);
+	}
+
+		public void Setclicartotal()throws InterruptedException {
+			
+			clicarBotaoBy(By.cssSelector("#conteudoTabCondicaoFinanceira > div:nth-of-type(1) [colspan]"));
+			Thread.sleep(2000);
+			
+		}
 
 }

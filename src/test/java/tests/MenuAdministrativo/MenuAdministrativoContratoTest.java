@@ -1,21 +1,41 @@
 package tests.MenuAdministrativo;
 
-public class MenuAdministrativoContratoTest {
+import org.junit.Test;
+import Page.MenuAdministrativo.MenuAdministrativoContratoPage;
+import qa.cnabox.core.BaseTest;
 
-}
-//page.RolarPaginaPageDown();
-//page.Tempo(4000);
-//page.RolarPaginaPageDown();
-//page.Tempo(4000);
-//page.Setclicartotal();
-//page.Tempo(4000);
-//page.RolarPaginaPageDown();
-//page.Tempo(4000);
-//page.SetBotãoCaixa();
-//page.Tempo(4000);
-//page.SetBotãoGerar();
-///page.Tempo(5000);
-///page.RolarPaginaPageDown();
+public class MenuAdministrativoContratoTest extends BaseTest {
+
+	MenuAdministrativoContratoPage page = new MenuAdministrativoContratoPage();
+	@Test
+	
+	public void Deverealizarofiltro() throws InterruptedException { 
+		
+		page.Tempo(4000);
+		page.SetClicarMenuAdministrativo();
+		page.Tempo(4000);
+		page.SetClicarContratos();
+		page.Tempo(3000);
+		page.SetFiltrarcontratos();
+		page.Tempo(2000);
+		page.SetPesquisaContratoNome("QA");
+		page.Tempo(2000);
+		page.RolarPagina();
+		page.SetClicaremfiltrar();
+		page.Tempo(2000);
+		page.SetbotãoAcoes();
+		page.Tempo(5000);
+		page.RolarPagina();
+		page.Tempo(4000);
+		page.RolarPaginaPageDown();
+		page.Tempo(4000);
+		page.Setclicartotal();
+		page.Tempo(4000);
+		page.SetBotãoCaixa();
+		page.Tempo(4000);
+		page.SetBotãoGerar();
+		page.Tempo(5000);
+		page.RolarPaginaPageDown();
 //page.Tempo(3000);
 ///Legenda 1- Comum, 2-Carnê///
 //page.SetLayout("2");
@@ -30,3 +50,5 @@ public class MenuAdministrativoContratoTest {
 //page.Tempo(3000);
 //page.SetBotãoGerar();
 
+}
+}
