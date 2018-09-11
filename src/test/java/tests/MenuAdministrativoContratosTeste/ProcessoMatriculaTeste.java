@@ -16,15 +16,15 @@ public class ProcessoMatriculaTeste extends BaseTest {
 	@Test
 	public void DeveCadastrarNovoProspect() throws InterruptedException {
 		page.SetClicarMenu();
-		page.AguardaCarregarPagina();
+		page.Tempo(4000);
 		page.SetClicarSubMenu();
-		page.AguardaCarregarPagina();
+		page.Tempo(4000);
 		page.SetClicarCadastrarProspect();
-		page.AguardaCarregarPagina();
+		page.Tempo(4000);
 		page.SetEscreveNomeAluno();
 		page.SetEscreveEmail();
 		page.ClicarCampoAtendimento();
-		page.AguardaCarregarPagina();
+		page.Tempo(4000);
 		page.ClicarCampoDescrição();
 		page.SetSexoMasculino();
 		page.SetDataNascimento(" 14111986 ");
@@ -33,36 +33,37 @@ public class ProcessoMatriculaTeste extends BaseTest {
 		page.SetTelefoneFixo(" 11345499472 ");
 		page.SetTelefoneCelular(" 11997499671 ");
 		page.RolarPaginaPageDown();
-		page.AguardaCarregarPagina();
+		page.Tempo(4000);
 		page.ClicarCampoCep();
 		page.SetCep("18045520");
-		page.AguardaCarregarPagina();
+		page.Tempo(4000);
 		page.SetNumeroResidencia("120");
-		page.AguardaCarregarPagina();
+		page.Tempo(4000);
 		page.RolarPaginaPageDown();
-		page.AguardaCarregarPagina();
+		page.Tempo(4000);
 		page.SetSelecionarIdioma();
-		page.AguardaCarregarPagina();
+		page.Tempo(4000);
 		page.SetSelecionarEstagio("20");
 		page.SetSelecionarHorario();
-		page.AguardaCarregarPagina();
+		page.Tempo(4000);
 		page.BuscaCPF();
-		page.AguardaCarregarPagina();
+		page.Tempo(4000);
 		page.RolarPaginaPageDown();
-		page.AguardaCarregarPagina();
+		page.Tempo(3000);
 		page.SetSelecionarMidia("41");
-		page.AguardaCarregarPagina();
+		page.Tempo(3000);
 		page.SetSelecionarCampanha("9");
-		page.AguardaCarregarPagina();
+		page.Tempo(3000);
 		page.SetoRolarCimaSemPageUP();
-		page.AguardaCarregarPagina();
+		page.Tempo(3000);
 		page.SetoRolarCimaSemPageUP();
-		page.AguardaCarregarPagina();
+		page.Tempo(3000);
 		page.ClicarMatricula();
-		page.AguardaCarregarPagina();
+		page.Tempo(3000);
 		page.ClicarSalvar();
 		page.Tempo(5000);
 		page.RolarPagina();
+		page.Tempo(3000);
 		page.RolarPaginaPageDown();
 		page.Tempo(4000);
 		page.ClicarProximoPasso1();
@@ -70,10 +71,8 @@ public class ProcessoMatriculaTeste extends BaseTest {
 		page.RolarPagina();
 		page.SetProximo3();
 		page.Tempo(3000);
-		
 		//// legenda de estágios = 2078-Basico, 2066-Yong, 2062-Pre-School, 2070-Kids, 2074-TEENS, 2088-Fast///
 		page.SetEstagio("2078");
-		
 		// Legenda de modalidade= 1 Extensivo, 2 intensivo, 3 plus////
 		page.Setmodalidade("1");
 		page.Tempo(2000);
@@ -92,9 +91,11 @@ public class ProcessoMatriculaTeste extends BaseTest {
 		page.Setdata("01102018");
 		page.Tempo(4000);
 		page.RolarPagina();
-		page.Tempo(4000);
+		page.Tempo(5000);
 		page.Setproximopassofinal();
-		page.Tempo(4000);
+		page.Tempo(5000);
+		page.RolarPaginaPageDown();
+		page.Tempo(6000);
 		page.SetConcluir();
 		page.Tempo(4000);
 		
