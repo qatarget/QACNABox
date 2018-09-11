@@ -122,15 +122,19 @@ public class ProcessoMatriculaTeste extends BaseTest {
 		//// Contrato finalizado/////
 		page.Tempo(6000);
 		page.RolarPagina();
-		page.Tempo(3000);
+		page.Tempo(4000);
+		page.SetclicarFecharmodalaviso();
+		page.Tempo(4000);
 		page.RolarPaginaPageDown();
-		page.Tempo(3000);
+		page.Tempo(4000);
+		page.RolarPaginaPageDown();
+		page.Tempo(4000);
 		page.Setclicartotal();
 		page.Tempo(4000);
 		page.RolarPaginaPageDown();
 		page.Tempo(4000);
 		page.SetclicarFecharmodalaviso();
-		page.Tempo(2000);
+		page.Tempo(3000);
 		page.SetBotãoCaixa();
 		page.Tempo(2000);
 		page.SetBotãoGerar();

@@ -291,7 +291,7 @@ public class ProcessoMatriculaPage extends BasePage {
 	}
 
 	public void RolarPagina() {
-	((JavascriptExecutor) getDriver()).executeScript("scroll(0,1200)");
+	((JavascriptExecutor) getDriver()).executeScript("scroll(0,1300)");
 	
 	}
 
@@ -412,7 +412,7 @@ public class ProcessoMatriculaPage extends BasePage {
 		
 		public void SetGerarBoletos() throws InterruptedException {
 			
-			clicarBotaoBy(By.xpath("//ul[@id='btnCaixaContrato']//a[@href='#modal-criar-boletos']"));
+			clicarBotaoBy(By.cssSelector("#btnCaixaContrato li:nth-of-type(3)"));
 			Thread.sleep(2000);
 		}
 		

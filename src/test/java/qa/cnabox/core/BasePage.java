@@ -161,10 +161,12 @@ public class BasePage {
 	 * @return
 	 */
 	public String GeraEmailAleatorio() {
-		String[] nomes = { "administracao", "adgomes", "afpres", "estagio", "ferramentaria", "alberflex", "figueiredo",
-				"bastos", "atendimento", "medeiros", "cerac", "cityrh", "comercial", "financeiro", "contabilidade",
-				"rh", "dp", "tecnologia", "consultoria", "contato", "curriculos", "cursos", "design", "cv",
-				"diretoriabrasilmarcas", "disk", "eadiaurora", "easyte", "emprego", "exportacao" };
+		String[] nomes = { "Antonio", "Rafael", "Bruno", "Marcelo", "Alberto", "Pedro", "Anderson", "Airton", "Sidney",
+				"Wilson", "Carlos", "Candido", "Hugo", "Joao", "Mauro", "Leonardo", "Natanael", "Reinaldo", "Orlando",
+				"Tiago", "Gildo", "Alfredo", "Mauricio", "Jurandir", "Paulo", "Juvencio", "Daniel", "Jair", "Juvenal",
+				"Jorge", "Agiliza", "Alessandro", "Alexandre", "Aline", "Ana Paula", "Andressa", "Antonia", "Camila",
+				"Carolina", "Cileia", "Debora", "Edna", "Ellen", "Eveline", "Fabio", "Fernanda", "Gesiele", "Hellen",
+				"Isabela", "Joice", "Joseense" };
 		String[] arroba = { "@" };
 		String[] tag = { "targetqa" };
 		String[] complemento = { ".com.br" };
