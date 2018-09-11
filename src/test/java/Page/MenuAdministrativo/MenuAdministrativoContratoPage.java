@@ -1,5 +1,11 @@
 package Page.MenuAdministrativo;
 
-public class MenuAdministrativoContratoPage {
+import qa.cnabox.core.BasePage;
+
+public class MenuAdministrativoContratoPage extends BasePage {
+	
+	
+	
+	
 
 }
