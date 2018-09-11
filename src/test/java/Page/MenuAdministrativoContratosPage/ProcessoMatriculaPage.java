@@ -412,7 +412,7 @@ public class ProcessoMatriculaPage extends BasePage {
 		
 		public void SetGerarBoletos() throws InterruptedException {
 			
-			clicarBotaoBy(By.linkText("Gerar Boletos"));
+			clicarBotaoBy(By.xpath("//ul[@id='btnCaixaContrato']//a[@href='#modal-criar-boletos']"));
 			Thread.sleep(2000);
 		}
 		
@@ -459,6 +459,20 @@ public class ProcessoMatriculaPage extends BasePage {
 		public void SetBotãoGerar()throws InterruptedException {
 			
 			clicarBotaoBy(By.cssSelector("btnGerarBoletos"));
+			Thread.sleep(2000);
+			
+		}
+		
+		public void Setclicartotal()throws InterruptedException {
+			
+			clicarBotaoBy(By.cssSelector("#conteudoTabCondicaoFinanceira > div:nth-of-type(1) [colspan]"));
+			Thread.sleep(2000);
+			
+		}
+		
+		public void SetclicarFecharmodalaviso()throws InterruptedException {
+			
+			clicarBotaoBy(By.id("botClose1"));
 			Thread.sleep(2000);
 			
 		}

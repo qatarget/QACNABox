@@ -15,6 +15,8 @@ public class ProcessoMatriculaTeste extends BaseTest {
 
 	@Test
 	public void DeveCadastrarNovoProspect() throws InterruptedException {
+		
+		//// Cadastrar Aluno////
 		page.SetClicarMenu();
 		page.Tempo(4000);
 		page.SetClicarSubMenu();
@@ -61,14 +63,20 @@ public class ProcessoMatriculaTeste extends BaseTest {
 		page.ClicarMatricula();
 		page.Tempo(3000);
 		page.ClicarSalvar();
+		
+	//////// Passo 1 da matricula////
 		page.Tempo(5000);
 		page.RolarPagina();
 		page.Tempo(3000);
 		page.RolarPaginaPageDown();
 		page.Tempo(4000);
 		page.ClicarProximoPasso1();
+		
+		////// Passo 2 da matricula////
 		page.Tempo(4000);
 		page.RolarPagina();
+		
+		///// Passo 3 da matricula///	
 		page.SetProximo3();
 		page.Tempo(3000);
 		//// legenda de estágios = 2078-Basico, 2066-Yong, 2062-Pre-School, 2070-Kids, 2074-TEENS, 2088-Fast///
@@ -81,6 +89,8 @@ public class ProcessoMatriculaTeste extends BaseTest {
 		page.RolarPagina();
 		page.Tempo(2000);
 		page.Setproximopasso();
+		
+		////Passo 4 da matricula//////
 		page.Tempo(4000);
 		page.RolarPagina();
 		page.Tempo(2000);
@@ -92,6 +102,9 @@ public class ProcessoMatriculaTeste extends BaseTest {
 		page.Tempo(3000);
 		page.RolarPagina();
 		page.Tempo(3000);
+		
+		//// Passo 5 da matricula ////
+		
 		page.Setproximopassofinal();
 		page.Tempo(5000);
 		page.RolarPaginaPageDown();
@@ -99,21 +112,31 @@ public class ProcessoMatriculaTeste extends BaseTest {
 		page.SetObservacao();
 		page.Tempo(5000);
 		page.RolarPaginaPageDown();
-		page.Tempo(3000);
+		page.Tempo(4000);
 		page.SetTemplante();
 		page.Tempo(4000);
 		page.RolarPaginaPageDown();
 		page.Tempo(4000);
 		page.SetConcluir();
+		
+		//// Contrato finalizado/////
+		page.Tempo(6000);
+		page.RolarPagina();
+		page.Tempo(3000);
+		page.RolarPaginaPageDown();
+		page.Tempo(3000);
+		page.Setclicartotal();
 		page.Tempo(4000);
 		page.RolarPaginaPageDown();
+		page.Tempo(4000);
+		page.SetclicarFecharmodalaviso();
 		page.Tempo(2000);
 		page.SetBotãoCaixa();
 		page.Tempo(2000);
 		page.SetBotãoGerar();
-		page.Tempo(2000);
+		page.Tempo(5000);
 		page.RolarPaginaPageDown();
-		page.Tempo(2000);
+		page.Tempo(3000);
 		///Legenda 1- Comum, 2-Carnê///
 		page.SetLayout("2");
 		page.Tempo(2000);
