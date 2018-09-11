@@ -69,10 +69,8 @@ public class MenuAdministrativoContratoPage extends BasePage {
 	
 	public void SetGerarBoletos() throws InterruptedException {
 		
-		clicarBotaoBy(By.cssSelector("#btnCaixaContrato li:nth-of-type(3)"));
-		Thread.sleep(2000);
-		//clicarBotaoBy(By.linkText("Gerar Boletos"));
-		//Thread.sleep(2000);
+		
+		
 		
 	}
 	
