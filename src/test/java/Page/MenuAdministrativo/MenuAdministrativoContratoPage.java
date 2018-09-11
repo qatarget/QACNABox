@@ -1,7 +1,6 @@
 package Page.MenuAdministrativo;
 
 import static qa.cnabox.core.DriverFactory.getDriver;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
@@ -10,11 +9,46 @@ import qa.cnabox.core.BasePage;
 
 public class MenuAdministrativoContratoPage extends BasePage {
 	
-	
 	public void SetClicarMenuAdministrativo() throws InterruptedException {
 		clicarBotaoBy(By.cssSelector(".nav-left-bar li:nth-of-type(7) .nav-title"));
 		Thread.sleep(2000);
 	}
+	
+	public void SetClicarContratos() throws InterruptedException {
+		clicarBotaoBy(By.cssSelector(".nav-left-bar li:nth-of-type(7) > .sub-menu:nth-child(2) > li:nth-of-type(3) .triggere"));
+		Thread.sleep(2000);
+	}
+	
+	public void SetFiltrarcontratos() throws InterruptedException {
+		clicarBotaoBy(By.id("Nome"));
+		Thread.sleep(2000);
+	}
+	
+	public void SetPesquisaContratoNome(String Nome) throws InterruptedException {
+		escreveTexto(By.id("Nome"), Nome);
+		Thread.sleep(2000);
+	}
+	
+	public void SetClicaremfiltrar() throws InterruptedException {
+		clicarBotaoBy(By.id("btnContratoFilter"));
+		Thread.sleep(2000);
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	public void SetBotãoCaixa()throws InterruptedException {
 		
