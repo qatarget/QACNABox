@@ -70,6 +70,8 @@ public class ProcessoMatriculaTeste extends BaseTest {
 		page.Tempo(4000);
 		page.RolarPaginaPageDown();
 		page.Tempo(4000);
+		page.RolarPaginaPageDown();
+		page.Tempo(4000);
 		page.ClicarProximoPasso1();
 		
 		////// Passo 2 da matricula////
