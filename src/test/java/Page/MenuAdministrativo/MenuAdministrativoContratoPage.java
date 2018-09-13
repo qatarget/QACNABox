@@ -4,6 +4,7 @@ import static qa.cnabox.core.DriverFactory.getDriver;
 
 import java.awt.AWTException;
 import java.awt.Robot;
+import java.awt.event.InputEvent;
 import java.awt.event.KeyEvent;
 
 import org.openqa.selenium.By;
@@ -67,12 +68,23 @@ public class MenuAdministrativoContratoPage extends BasePage {
 		
 	}
 	
-	public void SetGerarBoletos() throws InterruptedException {
+	public void SetGerarBoletosclick ()throws InterruptedException {
 		
+		getDriver().findElement(By.id("btnCaixaContrato")).click();
 		
+	//	try {
+	//	  Robot bot = new Robot();
+	//	    bot.mouseMove(x, y);    
+	//	    bot.mousePress(InputEvent.getMaskForButton(1));
+	//	    bot.mouseRelease(InputEvent.BUTTON1_MASK);
+	//	}
+	//	catch (AWTException ex) {
+	//		throw new WebDriverException("VK_PAGE_DOWN", ex);
+
+	//	}
+		//getDriver().findElement(By.id("btnCaixaContrato")).click();
 		
-		
-	}
+}
 	
 	public void SetLayout(String forma)throws InterruptedException {
 		
@@ -116,7 +128,7 @@ public class MenuAdministrativoContratoPage extends BasePage {
 	
 	public void SetBotãoGerar()throws InterruptedException {
 		
-		clicarBotaoBy(By.cssSelector("btnGerarBoletos"));
+		clicarBotaoBy(By.id("btnGerarBoletos"));
 		Thread.sleep(2000);
 		
 	}
