@@ -438,21 +438,4 @@ public class ProcessoMatriculaPGDinheiroPage extends BasePage {
 		 
 		
 		
-		public void Foto() {
-	        
-			int i=1;
-	        while (i<20) {
-	            try{
-	                Robot robot = new Robot();
-	                BufferedImage bi = robot.createScreenCapture(new // Captura a tela na àrea definida pelo retângulo
-	                Rectangle(0, 0, 1440, 900)); // aqui vc configura as posições xy e o tam da área que quer capturar
-	                ImageIO.write(bi, "jpg", new File("C:\\Projetos\\QACNABox\\Ultil,"));// Salva a imagem
-	            } catch(AWTException e){
-	                e.printStackTrace();
-	            } catch(IOException e){
-	                e.printStackTrace();
-	            }
-	            i++;
-	        }
-	}
 }

@@ -125,7 +125,7 @@ public void DeveCadastrarNovoProspect() throws InterruptedException {
 	page.Tempo(4000);
 	page.SetclicarFecharmodalaviso();
 	page.Tempo(4000);
-	page.Foto();
+
 
 }
 }
