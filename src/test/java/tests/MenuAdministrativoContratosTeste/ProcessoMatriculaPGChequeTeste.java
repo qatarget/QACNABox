@@ -1,15 +1,16 @@
 package tests.MenuAdministrativoContratosTeste;
+
 import org.junit.Test;
 import Page.MenuAdministrativoContratosPage.ProcessoMatriculaPGCarnePage;
 import qa.cnabox.core.BaseTest;
-public class ProcessoMatriculaPGCarneTeste extends BaseTest{
 
+	public class ProcessoMatriculaPGChequeTeste extends BaseTest{
 
 		ProcessoMatriculaPGCarnePage page = new ProcessoMatriculaPGCarnePage();
 		
 
 		@Test
-		public void DeveCadastrarUmContratoFormaDePGCarne() throws InterruptedException {
+		public void DeveCadastrarUmContratoFormaDePGCheque() throws InterruptedException {
 	
 	//// Cadastrar Aluno////
 	page.SetClicarMenu();

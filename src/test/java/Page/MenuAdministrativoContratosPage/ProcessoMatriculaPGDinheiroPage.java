@@ -3,32 +3,17 @@ package Page.MenuAdministrativoContratosPage;
 import static qa.cnabox.core.DriverFactory.getDriver;
 
 import java.awt.AWTException;
-import java.awt.Rectangle;
 import java.awt.Robot;
-import java.awt.event.ActionEvent;
 import java.awt.event.KeyEvent;
-import java.awt.image.BufferedImage;
-import java.io.File;
-import java.io.IOException;
-import java.util.function.BiConsumer;
-import java.util.Timer;
-import java.util.TimerTask;
-import javax.imageio.ImageIO;
-
-import org.apache.commons.io.FileUtils;
-import org.apache.xalan.transformer.Counter;
-import org.junit.rules.TestName;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriverException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import junitparams.naming.TestCaseName;
+
 import qa.cnabox.core.BasePage;
 
 public class ProcessoMatriculaPGDinheiroPage extends BasePage {
