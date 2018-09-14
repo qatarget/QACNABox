@@ -82,9 +82,9 @@ public void DeveCadastrarNovoProspect() throws InterruptedException {
 	//// legenda de estágios = 2078-Basico, 2066-Yong, 2062-Pre-School, 2070-Kids, 2074-TEENS, 2088-Fast///
 	page.SetEstagio("2078");
 	// Legenda de modalidade= 1 Extensivo, 2 intensivo, 3 plus////
-	page.Setmodalidade("1");
+	page.Setmodalidade("2");
 	page.Tempo(2000);
-	page.SetProximoestagio("1");
+	page.SetProximoestagio("2");
 	page.Tempo(2000);
 	page.RolarPagina();
 	page.Tempo(2000);
@@ -125,7 +125,7 @@ public void DeveCadastrarNovoProspect() throws InterruptedException {
 	page.Tempo(4000);
 	page.SetclicarFecharmodalaviso();
 	page.Tempo(4000);
-	
+	page.Foto();
 
 }
 }

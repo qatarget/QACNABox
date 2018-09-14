@@ -3,17 +3,32 @@ package Page.MenuAdministrativoContratosPage;
 import static qa.cnabox.core.DriverFactory.getDriver;
 
 import java.awt.AWTException;
+import java.awt.Rectangle;
 import java.awt.Robot;
+import java.awt.event.ActionEvent;
 import java.awt.event.KeyEvent;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
+import java.util.function.BiConsumer;
+import java.util.Timer;
+import java.util.TimerTask;
+import javax.imageio.ImageIO;
 
+import org.apache.commons.io.FileUtils;
+import org.apache.xalan.transformer.Counter;
+import org.junit.rules.TestName;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriverException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import junitparams.naming.TestCaseName;
 import qa.cnabox.core.BasePage;
 
 public class ProcessoMatriculaPGDinheiroPage extends BasePage {
@@ -419,4 +434,25 @@ public class ProcessoMatriculaPGDinheiroPage extends BasePage {
 			
 		}
 		
+	
+		 
+		
+		
+		public void Foto() {
+	        
+			int i=1;
+	        while (i<20) {
+	            try{
+	                Robot robot = new Robot();
+	                BufferedImage bi = robot.createScreenCapture(new // Captura a tela na àrea definida pelo retângulo
+	                Rectangle(0, 0, 1440, 900)); // aqui vc configura as posições xy e o tam da área que quer capturar
+	                ImageIO.write(bi, "jpg", new File("C:\\Projetos\\QACNABox\\Ultil,"));// Salva a imagem
+	            } catch(AWTException e){
+	                e.printStackTrace();
+	            } catch(IOException e){
+	                e.printStackTrace();
+	            }
+	            i++;
+	        }
+	}
 }

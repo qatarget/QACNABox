@@ -45,9 +45,8 @@ public class BaseTest {
 		FileUtils.copyFile(print, new File("target" + File.separator + "screenshot" + File.separator
 				+ testName.getMethodName() +  ".jpg"));
 
-		//if (Propriedades.FECHAR_BROWSER) {
-		//	killDriver();
+		
 		}
 	}
 
-//}
+
