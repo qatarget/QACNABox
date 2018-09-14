@@ -5,14 +5,8 @@ import qa.cnabox.core.BasePage;
 
 import static qa.cnabox.core.DriverFactory.getDriver;
 import java.awt.AWTException;
-import java.awt.Dimension;
 import java.awt.Robot;
-import java.awt.Toolkit;
 import java.awt.event.KeyEvent;
-import java.awt.image.BufferedImage;
-
-import javax.imageio.ImageIO;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriverException;
@@ -21,8 +15,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import com.gargoylesoftware.htmlunit.javascript.host.file.File;
-import com.sun.javafx.geom.Rectangle;
+
 
 	public class ProcessoMatriculaPGCartaoDebitoPage extends BasePage {
 	

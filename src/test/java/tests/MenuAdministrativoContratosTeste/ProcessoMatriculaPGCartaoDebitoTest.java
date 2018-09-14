@@ -1,7 +1,5 @@
 package tests.MenuAdministrativoContratosTeste;
 
-
-
 import org.junit.Test;
 import Page.MenuAdministrativoContratosPage.ProcessoMatriculaPGCartaoDebitoPage;
 import qa.cnabox.core.BaseTest;
