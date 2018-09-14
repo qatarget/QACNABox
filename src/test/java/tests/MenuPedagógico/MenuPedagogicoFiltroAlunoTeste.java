@@ -18,7 +18,6 @@ public class MenuPedagogicoFiltroAlunoTeste extends BaseTest {
 		page.SetNomeAluno("ACASSIA REGINA NASCIMENTO DE MEDEIROS");
 		page.ClicarBotãoFIltrar();
 		page.SetRolarAPagina();
-		//page.RealizarValidacao();
 
 	}
 
