@@ -1,4 +1,4 @@
-package Page.MenuAdministrativoContratosPage;
+package Page.GerarContratosFormaPGUnica;
 
 import qa.cnabox.core.BasePage;
 

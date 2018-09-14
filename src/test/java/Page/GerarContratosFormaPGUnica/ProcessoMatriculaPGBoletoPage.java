@@ -1,11 +1,12 @@
-package Page.MenuAdministrativoContratosPage;
+package Page.GerarContratosFormaPGUnica;
+
 
 import static qa.cnabox.core.DriverFactory.getDriver;
 
 import java.awt.AWTException;
 import java.awt.Robot;
 import java.awt.event.KeyEvent;
-import qa.cnabox.core.BasePage;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriverException;
@@ -14,8 +15,9 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class ProcessoMatriculaPGCarnePage extends BasePage {
+import qa.cnabox.core.BasePage;
 
+public class ProcessoMatriculaPGBoletoPage extends BasePage {
 
 	public void SetClicarMenu() {
 
@@ -415,10 +417,4 @@ public class ProcessoMatriculaPGCarnePage extends BasePage {
 			Thread.sleep(2000);
 			
 		}
-		
-	
-		 
-		
-		
-
 }

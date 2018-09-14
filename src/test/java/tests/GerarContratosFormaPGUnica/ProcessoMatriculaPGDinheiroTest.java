@@ -1,9 +1,8 @@
-package tests.MenuAdministrativoContratosTeste;
+package tests.GerarContratosFormaPGUnica;
 
 import org.junit.Test;
 
-
-import Page.MenuAdministrativoContratosPage.ProcessoMatriculaPGDinheiroPage;
+import Page.GerarContratosFormaPGUnica.ProcessoMatriculaPGDinheiroPage;
 import qa.cnabox.core.BaseTest;
 
 public class ProcessoMatriculaPGDinheiroTest  extends BaseTest {

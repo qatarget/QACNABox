@@ -1,17 +1,17 @@
-package tests.MenuAdministrativoContratosTeste;
-
+package tests.GerarContratosFormaPGUnica;
 import org.junit.Test;
-import Page.MenuAdministrativoContratosPage.ProcessoMatriculaPGCartaoDebitoPage;
+
+import Page.GerarContratosFormaPGUnica.ProcessoMatriculaPGCartaoCreditoPage;
 import qa.cnabox.core.BaseTest;
-	
-	public class ProcessoMatriculaPGCartaoDebitoTest extends BaseTest{
+
+public class ProcessoMatriculaPGCartaoCreditoTest extends BaseTest{
 
 
-			ProcessoMatriculaPGCartaoDebitoPage page = new ProcessoMatriculaPGCartaoDebitoPage();
+	ProcessoMatriculaPGCartaoCreditoPage page = new ProcessoMatriculaPGCartaoCreditoPage();
 			
 
-			@Test
-			public void DeveCadastrarUmContratoFormaDePGCartaoDebito() throws InterruptedException {
+@Test
+	public void DeveCadastrarUmContratoFormaDePGCartaoCredito() throws InterruptedException {
 		
 		//// Cadastrar Aluno////
 		page.SetClicarMenu();
@@ -93,7 +93,7 @@ import qa.cnabox.core.BaseTest;
 		page.Tempo(4000);
 		page.RolarPagina();
 		page.Tempo(2000);
-		page.SetFormadePG("1");
+		page.SetFormadePG("2");
 		page.Tempo(2000);
 		page.SetParcelas("12");
 		page.Tempo(2000);
@@ -124,11 +124,7 @@ import qa.cnabox.core.BaseTest;
 		page.Tempo(4000);
 		page.SetclicarFecharmodalaviso();
 		page.Tempo(4000);
-		
-		
-		    }
 
-			
+}
 	}
-
 
