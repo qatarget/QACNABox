@@ -92,7 +92,7 @@ import qa.cnabox.core.BaseTest;
 	page.Tempo(4000);
 	page.RolarPagina();
 	page.Tempo(2000);
-	page.SetFormadePG("7");
+	page.SetFormadePG("8");
 	page.Tempo(2000);
 	page.SetParcelas("12");
 	page.Tempo(2000);
