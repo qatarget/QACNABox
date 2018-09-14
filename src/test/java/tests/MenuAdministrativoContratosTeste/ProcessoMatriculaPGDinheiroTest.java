@@ -1,16 +1,18 @@
 package tests.MenuAdministrativoContratosTeste;
 
 import org.junit.Test;
-import Page.MenuAdministrativoContratosPage.ProcessoMatriculaPGCarnePage;
+
+
+import Page.MenuAdministrativoContratosPage.ProcessoMatriculaPGDinheiroPage;
 import qa.cnabox.core.BaseTest;
 
-	public class ProcessoMatriculaPGChequeTeste extends BaseTest{
-
-		ProcessoMatriculaPGCarnePage page = new ProcessoMatriculaPGCarnePage();
+public class ProcessoMatriculaPGDinheiroTest  extends BaseTest {
+		
+		ProcessoMatriculaPGDinheiroPage page = new ProcessoMatriculaPGDinheiroPage();
 		
 
-		@Test
-		public void DeveCadastrarUmContratoFormaDePGCheque() throws InterruptedException {
+@Test
+public void DeveCadastrarNovoProspect() throws InterruptedException {
 	
 	//// Cadastrar Aluno////
 	page.SetClicarMenu();
@@ -78,11 +80,11 @@ import qa.cnabox.core.BaseTest;
 	page.SetProximo3();
 	page.Tempo(3000);
 	//// legenda de estágios = 2078-Basico, 2066-Yong, 2062-Pre-School, 2070-Kids, 2074-TEENS, 2088-Fast///
-	page.SetEstagio("2074");
+	page.SetEstagio("2078");
 	// Legenda de modalidade= 1 Extensivo, 2 intensivo, 3 plus////
-	page.Setmodalidade("1");
+	page.Setmodalidade("2");
 	page.Tempo(2000);
-	page.SetProximoestagio("1");
+	page.SetProximoestagio("2");
 	page.Tempo(2000);
 	page.RolarPagina();
 	page.Tempo(2000);
@@ -92,7 +94,7 @@ import qa.cnabox.core.BaseTest;
 	page.Tempo(4000);
 	page.RolarPagina();
 	page.Tempo(2000);
-	page.SetFormadePG("8");
+	page.SetFormadePG("4");
 	page.Tempo(2000);
 	page.SetParcelas("12");
 	page.Tempo(2000);
@@ -127,5 +129,3 @@ import qa.cnabox.core.BaseTest;
 
 }
 }
-
-

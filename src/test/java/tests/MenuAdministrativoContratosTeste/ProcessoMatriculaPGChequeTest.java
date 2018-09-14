@@ -1,15 +1,16 @@
 package tests.MenuAdministrativoContratosTeste;
+
 import org.junit.Test;
 import Page.MenuAdministrativoContratosPage.ProcessoMatriculaPGCarnePage;
 import qa.cnabox.core.BaseTest;
-public class ProcessoMatriculaPGCarneTeste extends BaseTest{
 
+	public class ProcessoMatriculaPGChequeTest extends BaseTest{
 
 		ProcessoMatriculaPGCarnePage page = new ProcessoMatriculaPGCarnePage();
 		
 
 		@Test
-		public void DeveCadastrarUmContratoFormaDePGCarne() throws InterruptedException {
+		public void DeveCadastrarUmContratoFormaDePGCheque() throws InterruptedException {
 	
 	//// Cadastrar Aluno////
 	page.SetClicarMenu();
@@ -91,7 +92,7 @@ public class ProcessoMatriculaPGCarneTeste extends BaseTest{
 	page.Tempo(4000);
 	page.RolarPagina();
 	page.Tempo(2000);
-	page.SetFormadePG("7");
+	page.SetFormadePG("8");
 	page.Tempo(2000);
 	page.SetParcelas("12");
 	page.Tempo(2000);
