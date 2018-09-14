@@ -2,13 +2,27 @@ package qa.cnabox.core;
 
 
 
+import java.awt.Robot;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
 import java.util.Random;
+
+import javax.imageio.ImageIO;
+
+import org.apache.commons.io.FileUtils;
+import org.junit.Rule;
+import org.junit.rules.TestName;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 
 import static qa.cnabox.core.DriverFactory.getDriver;
 
 public class BasePage {
+	
+	
 	
 	private int randomiza(int n) {
 		int ranNum = (int) (Math.random() * n);
@@ -429,9 +443,8 @@ public class BasePage {
 		return telefoneAleatorio.toString();
 	}
 	
-	public void Rolar() {
-		
-		
-	}
+	
+
 }
+
 
