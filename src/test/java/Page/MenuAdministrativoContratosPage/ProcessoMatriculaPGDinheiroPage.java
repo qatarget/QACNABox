@@ -1,6 +1,5 @@
 package Page.MenuAdministrativoContratosPage;
 
-import static org.junit.Assert.assertEquals;
 import static qa.cnabox.core.DriverFactory.getDriver;
 
 import java.awt.AWTException;
@@ -17,7 +16,9 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import qa.cnabox.core.BasePage;
 
-public class ProcessoMatriculaPage extends BasePage {
+public class ProcessoMatriculaPGDinheiroPage extends BasePage {
+
+
 
 	public void SetClicarMenu() {
 
@@ -417,4 +418,5 @@ public class ProcessoMatriculaPage extends BasePage {
 			Thread.sleep(2000);
 			
 		}
+		
 }

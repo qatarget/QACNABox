@@ -5,11 +5,11 @@ import qa.cnabox.core.BaseTest;
 import org.junit.Test;
 
 
-import Page.MenuAdministrativoContratosPage.ProcessoMatriculaPage;;
+import Page.MenuAdministrativoContratosPage.ProcessoMatriculaPGBoletoPage;;
 
-public class ProcessoMatriculaTeste extends BaseTest {
+public class ProcessoMatriculaPGBoletoTeste extends BaseTest {
 	
-	ProcessoMatriculaPage page = new ProcessoMatriculaPage();
+	ProcessoMatriculaPGBoletoPage page = new ProcessoMatriculaPGBoletoPage();
 	
 	//*********************************************************Cadastro de Prospect**************************************************************//
 

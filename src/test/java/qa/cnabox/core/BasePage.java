@@ -122,14 +122,19 @@ public class BasePage {
 				"Tiago", "Gildo", "Alfredo", "Mauricio", "Jurandir", "Paulo", "Juvencio", "Daniel", "Jair", "Juvenal",
 				"Jorge", "Agiliza", "Alessandro", "Alexandre", "Aline", "Ana Paula", "Andressa", "Antonia", "Camila",
 				"Carolina", "Cileia", "Debora", "Edna", "Ellen", "Eveline", "Fabio", "Fernanda", "Gesiele", "Hellen",
-				"Isabela", "Joice", "Joseense" };
+				"Isabela", "Joice", "Joseense", "Beatriz", "Laura", "Maria Luiza", "Júlia","Ana", "Alice", "Sofia", "Maria Eduarda", "Larissa", 
+				"Mariana", "Isabela", "Camila", "Valentina", "Lara", "Letícia", "Miguel", "lucas", "Guilherme" ,"Gabriel", "Enzo", "Arthur", "Rafael", "João", "Gustavo", "Pedro", 
+				"Matheus", "Bernardo", "Davi", "Henrique", "Heitor" };
+		
 		String[] sobrenomes = { "Afonso", "Balera", "Seco", "Vieira", "Mendes", "Miyahira", "Garcia", "Cunha", "Santos",
-				"FlÃ¡vio" };
-		String[] ultimoNome = { "MagalhÃ£es", "Alves", "Silva", "Pereira", "Mathias", "Camargo", "Moraes", "Rodrigues",
+				"Flavio","Silva","Almeida" };
+		
+		String[] ultimoNome = { "Magalhaes", "Alves", "Silva", "Pereira", "Mathias", "Camargo", "Moraes", "Rodrigues",
 				"Fonseca", "Azevedo" };
+		
 		String[] tag = { "TARGET QA" };
 		StringBuilder nomeAleatorio = new StringBuilder();
-		nomeAleatorio.append(nomes[new Random().nextInt(50)]).append(" ").append(sobrenomes[new Random().nextInt(9)])
+		nomeAleatorio.append(nomes[new Random().nextInt(84)]).append(" ").append(sobrenomes[new Random().nextInt(9)])
 				.append(" de ").append(ultimoNome[new Random().nextInt(9)]).append(" ")
 				.append(tag[new Random().nextInt(1)]).append(" ");
 		return nomeAleatorio.toString();
@@ -161,18 +166,21 @@ public class BasePage {
 	 * @return
 	 */
 	public String GeraEmailAleatorio() {
+		
 		String[] nomes = { "Antonio", "Rafael", "Bruno", "Marcelo", "Alberto", "Pedro", "Anderson", "Airton", "Sidney",
 				"Wilson", "Carlos", "Candido", "Hugo", "Joao", "Mauro", "Leonardo", "Natanael", "Reinaldo", "Orlando",
 				"Tiago", "Gildo", "Alfredo", "Mauricio", "Jurandir", "Paulo", "Juvencio", "Daniel", "Jair", "Juvenal",
 				"Jorge", "Agiliza", "Alessandro", "Alexandre", "Aline", "Ana Paula", "Andressa", "Antonia", "Camila",
 				"Carolina", "Cileia", "Debora", "Edna", "Ellen", "Eveline", "Fabio", "Fernanda", "Gesiele", "Hellen",
-				"Isabela", "Joice", "Joseense" };
+				"Isabela", "Joice", "Joseense","Beatriz", "Laura", "Maria Luiza", "Júlia","Ana", "Alice", "Sofia", "Maria Eduarda", "Larissa", 
+				"Mariana", "Isabela", "Camila", "Valentina", "Lara", "Letícia", "Miguel", "lucas", "Guilherme" ,"Gabriel", "Enzo", "Arthur", "Rafael", "João", "Gustavo", "Pedro", 
+				"Matheus", "Bernardo", "Davi", "Henrique", "Heitor" };
 		String[] arroba = { "@" };
-		String[] tag = { "Gmail" };
+		String[] tag = { "Gmail","hotmail","outlook" };
 		String[] complemento = { ".com.br" };
 		StringBuilder emailAleatorio = new StringBuilder();
-		emailAleatorio.append(nomes[new Random().nextInt(29)]).append(arroba[new Random().nextInt(1)])
-				.append(tag[new Random().nextInt(1)]).append(complemento[new Random().nextInt(1)]);
+		emailAleatorio.append(nomes[new Random().nextInt(84)]).append(arroba[new Random().nextInt(1)])
+				.append(tag[new Random().nextInt(3)]).append(complemento[new Random().nextInt(1)]);
 		return emailAleatorio.toString();
 	}
 
