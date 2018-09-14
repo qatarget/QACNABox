@@ -69,5 +69,15 @@ public class MenuPedagogicoFiltroAlunoSemTurmaPage extends BasePage {
 		comboEstagio.selectByValue(idEstagio);
 		Thread.sleep(1500);
 	}
+	
+	public void ClicarBotãoFIltrar() throws InterruptedException {
+
+		getDriver().findElement(By.cssSelector(".widget-body footer [type='button']:nth-of-type(1)")).click();
+		Thread.sleep(3000);
+	}
+	
+	public void AguardaCarregarPagina() throws InterruptedException {
+		Thread.sleep(3000);
+	}
 
 }

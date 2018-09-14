@@ -1,11 +1,11 @@
 package Page.MenuPedagógico;
 
-import qa.cnabox.core.BasePage;
 import static qa.cnabox.core.DriverFactory.getDriver;
 
-import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+
+import qa.cnabox.core.BasePage;
 
 
 public class MenuPedagogicoFiltroAlunoPage extends BasePage {
@@ -34,13 +34,6 @@ public class MenuPedagogicoFiltroAlunoPage extends BasePage {
 		Thread.sleep(3000);
 	}
 	
-	
-	//Validar comando
-	public void RealizarValidacao() {
-		
-		Assert.assertEquals("ACASSIA REGINA NASCIMENTO DE MEDEIROS",
-				getDriver().findElement(By.cssSelector("tbody tr td:nth-of-type(2)")).getAttribute("ACASSIA REGINA NASCIMENTO DE MEDEIROS"));
-	}
 	
 	public void SetRolarAPagina() throws InterruptedException {
 
