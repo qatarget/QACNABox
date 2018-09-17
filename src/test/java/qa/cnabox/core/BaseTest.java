@@ -30,7 +30,7 @@ public class BaseTest {
 		page.SetSenha("teste_Target321");
 		page.entrar();
 		page.abrirComboBox();
-		page.digitarNomeEscola("CNA Chacara inglesa");
+		page.digitarNomeEscola("CNA Vila Mariana");
 		page.setResultadoEscola();
 		page.acessarEscola();
 		
