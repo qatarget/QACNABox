@@ -395,12 +395,27 @@ public class ProcessoMatriculaPGBoletoPage extends BasePage {
 			}
 		}
 			
-			 
-		
-		
-		public void Setproximopassofinal()throws InterruptedException {
+		public void SetEstagioLancamento(String numero)throws InterruptedException {
 			
-			clicarBotaoBy(By.id("btnCondicoesFinanceirasSave"));
+			clicarBotaoBy(By.id("EstagioIdEspecificado"));
+			Thread.sleep(2000);
+			WebElement modalidade = getDriver().findElement(By.id("EstagioIdEspecificado"));
+			Select combomodalidade = new Select(modalidade);
+			combomodalidade.selectByValue(numero);
+		}
+
+		public void SetQuantidadedeparcelas(String numero)throws InterruptedException {
+			
+			clicarBotaoBy(By.id("QuatidadeDeParcelasDoEstagio"));
+			Thread.sleep(2000);
+			escreveTexto(By.id("QuatidadeDeParcelasDoEstagio"), numero);
+		}
+		
+		
+		
+		public void SetAdicionar()throws InterruptedException {
+			
+			clicarBotaoBy(By.id("btnLancamentoSave"));
 			Thread.sleep(2000);
 			
 		}

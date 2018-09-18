@@ -105,31 +105,15 @@ public class ProcessoMatriculaPGBoletoTest extends BaseTest {
 			page.Setresponsavel();
 			page.RolarPagina();
 			page.Tempo(3000);
+			page.SetEstagioLancamento("824809");
+			page.Tempo(2000);
+			page.SetQuantidadedeparcelas("6");
+			page.SetAdicionar();
+			page.Tempo(2000);
 			
-			//// Passo 5 da matricula ////
 			
-////////page.Setproximopassofinal();
-			page.Tempo(5000);
-			page.RolarPaginaPageDown();
-			page.Tempo(5000);
-			page.SetObservacao();
-			page.Tempo(5000);
-			page.RolarPaginaPageDown();
-			page.Tempo(4000);
-			page.SetTemplante();
-			page.Tempo(4000);
-			page.RolarPaginaPageDown();
-			page.Tempo(4000);
-			page.SetConcluir();
+
 			
-			//// Contrato finalizado/////
-			page.Tempo(6000);
-			page.RolarPagina();
-			page.Tempo(4000);
-			page.SetclicarFecharmodalaviso();
-			page.Tempo(4000);
-			
-		
 		}
 	}
 
