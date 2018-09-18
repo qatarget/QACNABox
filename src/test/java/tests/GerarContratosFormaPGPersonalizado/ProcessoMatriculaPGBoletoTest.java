@@ -94,19 +94,21 @@ public class ProcessoMatriculaPGBoletoTest extends BaseTest {
 			page.Tempo(2000);
 			page.SetFormadePG();
 			page.Tempo(2000);
-			page.SetAdicionarParcelas("3"); 
+			page.SetAdicionarParcelas(); 
+			page.Tempo(2000);
+			page.SetCondicao("3");
 			page.Tempo(2000);
 			page.Setdata("01102018");
 			page.Tempo(2000);
 			page.SetFormaDePagamento("6");
 			page.Tempo(2000);
-			
+			page.Setresponsavel();
 			page.RolarPagina();
 			page.Tempo(3000);
 			
 			//// Passo 5 da matricula ////
 			
-			page.Setproximopassofinal();
+////////page.Setproximopassofinal();
 			page.Tempo(5000);
 			page.RolarPaginaPageDown();
 			page.Tempo(5000);

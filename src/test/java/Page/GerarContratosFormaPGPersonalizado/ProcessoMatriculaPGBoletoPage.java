@@ -346,7 +346,7 @@ public class ProcessoMatriculaPGBoletoPage extends BasePage {
 			
 		}
 		
-		public void SetAdicionarParcelas(String numero)throws InterruptedException {
+		public void SetAdicionarParcelas()throws InterruptedException {
 			
 			clicarBotaoBy(By.linkText("Adicionar Parcela"));
 			Thread.sleep(2000);
@@ -356,7 +356,7 @@ public class ProcessoMatriculaPGBoletoPage extends BasePage {
 		public void SetCondicao(String numero)throws InterruptedException {
 			
 			clicarBotaoBy(By.id("TipoConfiguracaoLancamentoPersonalizado"));
-			Thread.sleep(2000);
+			Thread.sleep(3000);
 			WebElement modalidade = getDriver().findElement(By.id("TipoConfiguracaoLancamentoPersonalizado"));
 			Select combomodalidade = new Select(modalidade);
 			combomodalidade.selectByValue(numero);
@@ -376,19 +376,26 @@ public class ProcessoMatriculaPGBoletoPage extends BasePage {
 			
 			clicarBotaoBy(By.id("FormaPagamentoId"));
 			Thread.sleep(2000);
-			WebElement Forma = getDriver().findElement(By.id("FormaPagamentoId"));
-			Select comboForma = new Select(Forma);
-			comboForma.selectByValue(numero);
+			WebElement modalidade = getDriver().findElement(By.id("FormaPagamentoId"));
+			Select combomodalidade = new Select(modalidade);
+			combomodalidade.selectByValue(numero);
 		}
 		
-		public void Setresponsavel(String numero)throws InterruptedException {
+		public void Setresponsavel()throws InterruptedException {
 			
-			clicarBotaoBy(By.id("FormaPagamentoId"));
+			clicarBotaoBy(By.cssSelector("[action='\\/Lancamento\\/Save'] tr:nth-of-type(6) .select"));
 			Thread.sleep(2000);
-			WebElement Forma = getDriver().findElement(By.id("FormaPagamentoId"));
-			Select comboForma = new Select(Forma);
-			comboForma.selectByValue(numero);
+			try {
+				Robot robot = new Robot();
+				robot.keyPress(KeyEvent.VK_PAGE_DOWN);
+				robot.keyRelease(KeyEvent.VK_PAGE_DOWN);
+			} catch (AWTException ex) {
+				throw new WebDriverException("VK_PAGE_DOWN", ex);
+
+			}
 		}
+			
+			 
 		
 		
 		public void Setproximopassofinal()throws InterruptedException {
