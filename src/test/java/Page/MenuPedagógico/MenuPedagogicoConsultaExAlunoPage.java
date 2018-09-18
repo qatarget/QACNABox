@@ -17,23 +17,23 @@ public class MenuPedagogicoConsultaExAlunoPage extends BasePage {
 	public void SetClicarSubMenu() {
 		clicarBotaoBy(By.cssSelector(
 				"//div[@id='menu-lateral']/ul[@class='nav-left-bar']/li[8]/ul[@class='sub-menu']//span[.='Ex-aluno']"));
-		}
-	
+	}
+
 	public void EscreveNomeExAluno(String NomeExAluno) throws InterruptedException {
-		
+
 		escreveTexto(By.id("Nome"), NomeExAluno);
 		Thread.sleep(1500);
 	}
-	
+
 	public void SetSituacao(String idSituacao) {
 		WebElement Situacao = getDriver().findElement(By.id("StatusAlunoId"));
 		Select comboSituacao = new Select(Situacao);
 		comboSituacao.selectByValue(idSituacao);
-		
+
 	}
-	
+
 	public void EscreveDataStatusIn(String DataStatusIn) throws InterruptedException {
-		
+
 		clicarBotaoBy(By.id("DataSituacaoStart"));
 		Thread.sleep(1500);
 		escreveTexto(By.id("DataSituacaoStart"), DataStatusIn);
@@ -45,9 +45,9 @@ public class MenuPedagogicoConsultaExAlunoPage extends BasePage {
 		Thread.sleep(1500);
 		escreveTexto(By.id("DataSituacaoEnd"), DataStatusOut);
 		Thread.sleep(1500);
-		
+
 	}
-	
+
 	public void SetCurso(String idCurso) throws InterruptedException {
 
 		WebElement Curso = getDriver().findElement(By.id("CursoId"));
@@ -81,10 +81,16 @@ public class MenuPedagogicoConsultaExAlunoPage extends BasePage {
 		Thread.sleep(1500);
 	}
 
+	public void FiltrarEmTela() throws InterruptedException {
 
+		clicarBotaoBy(By.id("btnExAlunosFilter"));
+		Thread.sleep(2000);
+	}
+
+	public void ExportarRelatorioExAluno() throws InterruptedException {
+
+		clicarBotaoBy(By.id("btnExportarXlsAnalitico"));
+		Thread.sleep(2000);
+	}
 
 }
-
-
-
-
