@@ -399,15 +399,35 @@ public class ProcessoMatriculaPGBoletoPage extends BasePage {
 			
 			clicarBotaoBy(By.id("EstagioIdEspecificado"));
 			Thread.sleep(2000);
-			clicarBotaoBy(By.cssSelector("#EstagioIdEspecificado [value='824809']"));
-			Thread.sleep(2000);
-		}
+			
+			try {
+				Robot robot = new Robot();
+				robot.keyPress(KeyEvent.VK_B);
+				robot.keyRelease(KeyEvent.VK_B);
+			} catch (AWTException ex) {
+				throw new WebDriverException("VK_B", ex);
 
-		public void SetQuantidadedeparcelas(String numero)throws InterruptedException {
+			}
+		}
+			
+			
+			//String teclaEsquerda = KeyEvent.("keypress"); 
+			//teclaEsquerda.ctrlKey = false;
+			//teclaEsquerda.which = 40; //Código da tecla - seta esquerda
+//
+			//$("botao").trigger(teclaEsquerda);
+		//}
+
+		public void SetQuantidadedeparcelas()throws InterruptedException {
 			
 			clicarBotaoBy(By.id("QuatidadeDeParcelasDoEstagio"));
 			Thread.sleep(2000);
-			escreveTexto(By.cssSelector("QuatidadeDeParcelasDoEstagio"), numero);
+			getDriver().findElement(By.id("QuatidadeDeParcelasDoEstagio")).clear();
+			Thread.sleep(2000);
+			getDriver().findElement(By.id("QuatidadeDeParcelasDoEstagio")).click();
+			Thread.sleep(2000);
+			getDriver().findElement(By.id("QuatidadeDeParcelasDoEstagio")).sendKeys("6");
+			Thread.sleep(2000);
 		}
 		
 		
@@ -419,9 +439,9 @@ public class ProcessoMatriculaPGBoletoPage extends BasePage {
 			
 		}
 		
-		public void SetConcluir()throws InterruptedException {
+		public void SetClicar()throws InterruptedException {
 			
-			clicarBotaoBy(By.id("btnGerarContrato"));
+			clicarBotaoBy(By.id("total-a-dividir"));
 			Thread.sleep(2000);
 			
 		}
