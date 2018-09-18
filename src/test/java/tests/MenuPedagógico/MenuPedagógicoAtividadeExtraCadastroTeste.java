@@ -20,34 +20,31 @@ public class MenuPedagógicoAtividadeExtraCadastroTeste extends BaseTest {
 		page.SetCadastrarNovaAtividade();
 		page.AguardaCarregarPagina();
 		page.EscreveNomeAtividade("Atividade Extra QA");
-		page.AguardaCarregarPagina();
 		page.SetTipoAtividade("6");
-		page.AguardaCarregarPagina();
 		page.EscreveDescricao("Descrição teste QA Target");
-		page.AguardaCarregarPagina();
-		page.SetIdioma("3");
-		page.AguardaCarregarPagina();
-		page.SetCurso("4");
-		page.AguardaCarregarPagina();
-		page.SetNivel("7");
-		page.AguardaCarregarPagina();
-		page.SetEstagio("20");
-		page.AguardaCarregarPagina();
+		page.SetIdioma("1");
+		page.SetCurso("2");
+		page.SetNivel("5");
+		page.SetEstagio("15");
 		page.SetModalidade("1");
-		page.AguardaCarregarPagina();
-		page.SetTurma("5223");
-		page.AguardaCarregarPagina();
-		page.EscreveParticipantesPrevistos("10");
+		page.SetTurma("5241");
+		page.EscreveParticipantesPrevistos("5");
+		page.SetRolarAPagina();
 		page.DataAtividade("10102018");
 		page.AguardaCarregarPagina();
 		page.HoraInicioAtividade("1200");
-		page.AguardaCarregarPagina();
 		page.HoraTerminoAtivodade("1400");
-		page.AguardaCarregarPagina();
 		page.ClicarBtnProximo();
 		page.AguardaCarregarPagina();
 
 		// Segundo passo do Cadastro
+
+		page.SetSala();
+		page.AguardaCarregarPagina();
+		page.SetProfessor();
+		page.AguardaCarregarPagina();
+		page.SetRolarAPagina();
+		page.ClicarBtnSalvar();
 
 	}
 

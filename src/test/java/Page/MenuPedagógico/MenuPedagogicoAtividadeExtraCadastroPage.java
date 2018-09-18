@@ -2,8 +2,13 @@ package Page.MenuPedagógico;
 
 import static qa.cnabox.core.DriverFactory.getDriver;
 
+import java.awt.AWTException;
+import java.awt.Robot;
+import java.awt.event.KeyEvent;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriverException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 
@@ -16,12 +21,11 @@ public class MenuPedagogicoAtividadeExtraCadastroPage extends BasePage {
 	}
 
 	public void SetClicarSubMenu() {
-		clicarBotaoBy(By.cssSelector(
-				"//div[@id='menu-lateral']/ul[@class='nav-left-bar']/li[8]/ul[@class='sub-menu']//span[.='Atividade Extra']"));
+		clicarBotaoBy(By.cssSelector(".nav-left-bar li:nth-of-type(8) li:nth-of-type(5) span"));
 	}
 
 	public void AguardaCarregarPagina() throws InterruptedException {
-		Thread.sleep(3000);
+		Thread.sleep(1200);
 	}
 
 	public void SetCadastrarNovaAtividade() throws InterruptedException {
@@ -52,6 +56,8 @@ public class MenuPedagogicoAtividadeExtraCadastroPage extends BasePage {
 
 	public void SetCurso(String idCurso) throws InterruptedException {
 
+		clicarBotaoBy(By.id("CursoId"));
+		AguardaCarregarPagina();
 		WebElement Curso = getDriver().findElement(By.id("CursoId"));
 		Select comboCurso = new Select(Curso);
 		comboCurso.selectByValue(idCurso);
@@ -109,7 +115,7 @@ public class MenuPedagogicoAtividadeExtraCadastroPage extends BasePage {
 
 	public void DataAtividade(String Data) throws InterruptedException {
 		clicarBotaoBy(By.cssSelector(".date"));
-		Thread.sleep(1500);
+		Thread.sleep(100);
 		escreveTexto(By.cssSelector(".date"), Data);
 	}
 
@@ -138,16 +144,13 @@ public class MenuPedagogicoAtividadeExtraCadastroPage extends BasePage {
 
 	public void SetSala() {
 
-		getDriver()
-				.findElement(By.cssSelector(
-						"/html//table[@id='tabela_sala_disponivel']/tbody/tr[2]/td[1]/label[@class='checkbox']/i"))
-				.click();
+		getDriver().findElement(By.cssSelector("#tabela_sala_disponivel tr:nth-of-type(2) i")).click();
 	}
 
 	public void SetProfessor() {
 
-		getDriver().findElement(By.cssSelector(
-				"/html//table[@id='tabela_professor_disponivel']/tbody/tr[1]/td[1]/label[@class='checkbox']/i"));
+		getDriver().findElement(By.cssSelector("#tabela_professor_disponivel tr:nth-of-type(3) td:nth-of-type(1) i"))
+				.click();
 	}
 
 	public void SetRolarAPagina() throws InterruptedException {
@@ -161,6 +164,39 @@ public class MenuPedagogicoAtividadeExtraCadastroPage extends BasePage {
 
 		clicarBotaoBy(By.id("btnSaveAll"));
 		AguardaCarregarPagina();
+	}
+
+	public void RolarPaginaPageDown() {
+
+		try {
+			Robot robot = new Robot();
+			robot.keyPress(KeyEvent.VK_PAGE_DOWN);
+			robot.keyRelease(KeyEvent.VK_PAGE_DOWN);
+		} catch (AWTException ex) {
+			throw new WebDriverException("VK_PAGE_DOWN", ex);
+
+		}
+	}
+
+	public void RolarPaginaPageUp() {
+
+		try {
+			Robot robot = new Robot();
+			robot.keyPress(KeyEvent.VK_PAGE_UP);
+			robot.keyPress(KeyEvent.VK_PAGE_UP);
+			robot.keyRelease(KeyEvent.VK_PAGE_UP);
+			robot.keyRelease(KeyEvent.VK_PAGE_UP);
+
+		} catch (AWTException ex) {
+			throw new WebDriverException("VK_PAGE_UP", ex);
+
+		}
+
+	}
+
+	public void ClicarModal() {
+
+		getDriver().findElement(By.cssSelector(".tab-content")).click();
 	}
 
 }
