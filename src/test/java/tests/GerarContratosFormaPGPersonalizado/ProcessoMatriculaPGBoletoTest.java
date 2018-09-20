@@ -112,7 +112,23 @@ public class ProcessoMatriculaPGBoletoTest extends BaseTest {
 			page.SetClicar();
 			page.Tempo(3000);
 			page.SetAdicionar();
+			page.Tempo(3000);
+			page.SetAdicionarParcelas();
+			page.Tempo(1000);
+			page.SetCondicao("3");
+			page.Tempo(1000);
+			page.Setdata("01042019");
 			page.Tempo(2000);
+			page.SetFormaDePagamento("6");
+			page.Tempo(2000);
+			page.Setresponsavel();
+			page.Tempo(1000);
+			page.SetEstagioLancamento2();
+			page.Tempo(1000);
+			page.SetQuantidadedeparcelas();
+			page.SetClicar();
+			page.SetAdicionar();
+			
 			
 			
 

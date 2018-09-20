@@ -5,6 +5,9 @@ import static qa.cnabox.core.DriverFactory.getDriver;
 import java.awt.AWTException;
 import java.awt.Robot;
 import java.awt.event.KeyEvent;
+
+import javax.xml.stream.events.EndDocument;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriverException;
@@ -421,11 +424,9 @@ public class ProcessoMatriculaPGBoletoPage extends BasePage {
 		public void SetQuantidadedeparcelas()throws InterruptedException {
 			
 			clicarBotaoBy(By.id("QuatidadeDeParcelasDoEstagio"));
-			Thread.sleep(2000);
+		
 			getDriver().findElement(By.id("QuatidadeDeParcelasDoEstagio")).clear();
-			Thread.sleep(2000);
 			getDriver().findElement(By.id("QuatidadeDeParcelasDoEstagio")).click();
-			Thread.sleep(2000);
 			getDriver().findElement(By.id("QuatidadeDeParcelasDoEstagio")).sendKeys("6");
 			Thread.sleep(2000);
 		}
@@ -441,7 +442,7 @@ public class ProcessoMatriculaPGBoletoPage extends BasePage {
 		
 		public void SetClicar()throws InterruptedException {
 			
-			clicarBotaoBy(By.id("total-a-dividir"));
+			clicarBotaoBy(By.id("TotalDiferencaLancamentosPersonalizadosDisplayModal"));
 			Thread.sleep(2000);
 			
 		}
@@ -474,6 +475,39 @@ public class ProcessoMatriculaPGBoletoPage extends BasePage {
 			Thread.sleep(2000);
 			
 		}
+		
+public void SetEstagioLancamento2()throws InterruptedException {
+			
+			clicarBotaoBy(By.id("EstagioIdEspecificado"));
+			Thread.sleep(2000);
+			
+			try {
+				Robot robot = new Robot();
+				robot.keyPress(KeyEvent.VK_B);
+				robot.keyRelease(KeyEvent.VK_B);
+				robot.keyPress(KeyEvent.VK_B);
+				robot.keyRelease(KeyEvent.VK_B);
+			} catch (AWTException ex) {
+				throw new WebDriverException("VK_B", ex);
+
+			}
+		}
+
+ 		public void SetLancarmaterial() throws InterruptedException{
+ 		
+ 		clicarBotaoBy(By.linkText("MATERIAL DIDÁTICO"));
+ 		Tempo(2000);
+ 		
+ 	}
+ 		public void SetAdicionarparcelaMate() throws InterruptedException{
+ 		
+ 		clicarBotaoBy(By.id("btnLancamentoNew"));
+ 		Tempo(2000);
+ 		
+ 	}
+ 	
+ 		
+ 	
 }
 
 
