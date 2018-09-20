@@ -5,9 +5,6 @@ import static qa.cnabox.core.DriverFactory.getDriver;
 import java.awt.AWTException;
 import java.awt.Robot;
 import java.awt.event.KeyEvent;
-
-import javax.xml.stream.events.EndDocument;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriverException;
@@ -476,7 +473,7 @@ public class ProcessoMatriculaPGBoletoPage extends BasePage {
 			
 		}
 		
-public void SetEstagioLancamento2()throws InterruptedException {
+		public void SetEstagioLancamento2()throws InterruptedException {
 			
 			clicarBotaoBy(By.id("EstagioIdEspecificado"));
 			Thread.sleep(2000);
@@ -506,8 +503,88 @@ public void SetEstagioLancamento2()throws InterruptedException {
  		
  	}
  	
+ 		public void SetAdicionarcondicaomaterial(String numero) throws InterruptedException{
+ 	 		
+ 	 		clicarBotaoBy(By.id("TipoConfiguracaoLancamentoPersonalizado"));
+ 	 		Tempo(2000);
+ 	 		WebElement elemento = getDriver().findElement(By.id("TipoConfiguracaoLancamentoPersonalizado"));
+ 	 		Select combomodalidade = new Select(elemento);
+			combomodalidade.selectByValue(numero);
+ 	 	}
+ 	 	
+ 		public void Setdatamaterial(String proximadata)throws InterruptedException {
+			
+			clicarBotaoBy(By.cssSelector("#DataVencimento"));
+			Thread.sleep(2000);
+			getDriver().findElement(By.cssSelector("#DataVencimento")).sendKeys(proximadata);
+			Thread.sleep(2000);
+		}
  		
- 	
+ 		public void SetAdicionarformadepagamentoMD(String numero) throws InterruptedException{
+ 	 		
+ 	 		clicarBotaoBy(By.id("FormaPagamentoId"));
+ 	 		Tempo(2000);
+ 	 		WebElement MD = getDriver().findElement(By.id("FormaPagamentoId"));
+ 	 		Select combomodalidade = new Select(MD);
+			combomodalidade.selectByValue(numero);
+ 	 	}
+ 		
+ 		
+ 		public void SetresponsavelMD()throws InterruptedException {
+			
+			clicarBotaoBy(By.id("ResponsavelId"));
+			Thread.sleep(2000);
+			try {
+				Robot robot = new Robot();
+				robot.keyPress(KeyEvent.VK_PAGE_DOWN);
+				robot.keyRelease(KeyEvent.VK_PAGE_DOWN);
+			} catch (AWTException ex) {
+				throw new WebDriverException("VK_PAGE_DOWN", ex);
+
+			}
+		}
+ 		
+ 		public void SetValordaparcela() throws InterruptedException{
+ 	 		
+ 	 		clicarBotaoBy(By.id("ValorDaRepeticao"));
+ 	 		Tempo(2000);
+ 	 		escreveTexto(By.id("ValorDaRepeticao"), "138,33");
+ 	 	}
+ 		public void Setquantidadeparcela() throws InterruptedException{
+ 	 		
+ 	 		clicarBotaoBy(By.id("NumeroRepeticoes"));
+ 	 		Tempo(2000);
+ 	 		escreveTexto(By.id("NumeroRepeticoes"), "6");
+ 	 	}
+ 		
+ 		public void SetAdicionarMD() throws InterruptedException{
+ 	 		
+ 	 		clicarBotaoBy(By.id("btnLancamentoSave"));
+ 	 		Tempo(2000);
+ 		}
+ 		
+ 		public void Ajustarparcela() throws InterruptedException{
+ 	 		
+ 	 		clicarBotaoBy(By.cssSelector("#LancamentoGrid tr:nth-of-type(12) .fa-pencil"));
+ 	 		Tempo(2000);
+ 		}
+ 		
+ 		public void Ajustarparcelalancamento() throws InterruptedException{
+ 	 		
+ 	 		clicarBotaoBy(By.id("ValorParcela"));
+ 	 		Tempo(2000);
+ 	 		getDriver().findElement(By.id("ValorParcela")).clear();
+ 	 		getDriver().findElement(By.id("ValorParcela")).click();
+ 	 		getDriver().findElement(By.id("ValorParcela")).sendKeys("370,26");
+ 	 		Tempo(2000);
+ 		}
+ 		
+ 		public void Adicionarajuste() throws InterruptedException{
+ 	 		
+ 	 	clicarBotaoBy(By.id("btnLancamentoEdit"));
+ 	 	Tempo(2000);
+ 		}
+ 		
 }
 
 
