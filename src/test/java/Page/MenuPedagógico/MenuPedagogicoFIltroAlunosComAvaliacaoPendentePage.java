@@ -22,12 +22,15 @@ public class MenuPedagogicoFIltroAlunosComAvaliacaoPendentePage extends BasePage
 		Thread.sleep(3000);
 	}
 
-	public void EscreveNomeAluno(String texto) {
-
-		escreveTexto(By.id("NomeAluno"), texto);
+	public void EscreveNomeAluno(String texto) throws InterruptedException {
+		
+		//clicarBotaoBy(By.cssSelector("#NomeAluno"));
+		//Thread.sleep(1000);
+		escreveTexto(By.cssSelector("#NomeAluno"), texto);
 	}
 
 	public void SetprofessorInstrutor(String idProf) throws InterruptedException {
+		clicarBotaoBy(By.id("ProfessorId"));
 		WebElement Professor = getDriver().findElement(By.id("ProfessorId"));
 		Select comboProfessor = new Select(Professor);
 		comboProfessor.selectByValue(idProf);
