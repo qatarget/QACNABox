@@ -15,6 +15,14 @@ public class MenuPedagogicoFiltroAlunoSemTurmaPage extends BasePage {
 		getDriver().findElement(By.cssSelector(".nav-left-bar li:nth-of-type(8) .menu-item span")).click();
 
 	}
+	
+	public void SetClicarSubMenu() {
+		clicarBotaoBy(By.cssSelector(".nav-left-bar li:nth-of-type(8) li:nth-of-type(2) span"));
+	}
+
+	public void AguardaCarregarPagina() throws InterruptedException {
+		Thread.sleep(3000);
+	}
 
 	public void ClicarAlunoSemTurma() throws InterruptedException {
 
@@ -73,10 +81,6 @@ public class MenuPedagogicoFiltroAlunoSemTurmaPage extends BasePage {
 	public void ClicarBotãoFIltrar() throws InterruptedException {
 
 		getDriver().findElement(By.cssSelector(".widget-body footer [type='button']:nth-of-type(1)")).click();
-		Thread.sleep(3000);
-	}
-	
-	public void AguardaCarregarPagina() throws InterruptedException {
 		Thread.sleep(3000);
 	}
 
