@@ -1,10 +1,8 @@
 package tests.MenuPedagógico;
 
-import qa.cnabox.core.BaseTest;
-
 import org.junit.Test;
 
-import Page.MenuPedagógico.MenuPedagogicoAlunosComPendenciasPedagogicasPage;
+import qa.cnabox.core.BaseTest;
 
 public class MenuPedagogicoAlunosComPendenciasPedagogicasTeste extends BaseTest {
 
