@@ -151,7 +151,11 @@ public class ProcessoMatriculaPGBoletoPage extends BasePage {
 		for (String CNABox : getDriver().getWindowHandles()) {
 			getDriver().switchTo().window(CNABox);
 		}
-		Thread.sleep(2000);
+		Thread.sleep(3000);
+		
+		JavascriptExecutor js = (JavascriptExecutor) getDriver();
+		js.executeScript("window.scrollBy(0,200)", "");
+		
 		getDriver().findElement(By.id("CPF_CNPJ")).click();
 		Thread.sleep(3000);
 
@@ -584,6 +588,19 @@ public class ProcessoMatriculaPGBoletoPage extends BasePage {
  	 	clicarBotaoBy(By.id("btnLancamentoEdit"));
  	 	Tempo(2000);
  		}
+ 		
+ 		public void PageUp() throws InterruptedException{
+ 		
+ 		try {
+			Robot robot = new Robot();
+			robot.keyPress(KeyEvent.VK_PAGE_UP);
+			robot.keyRelease(KeyEvent.VK_PAGE_UP);
+			
+		} catch (AWTException ex) {
+			throw new WebDriverException("VK_PAGE_UP", ex);
+
+		}
+	}
  		
 }
 

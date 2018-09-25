@@ -45,7 +45,7 @@ public class ProcessoMatriculaPGBoletoTest extends BaseTest {
 			page.SetSelecionarHorario();
 			page.Tempo(4000);
 			page.BuscaCPF();
-			page.Tempo(4000);
+			page.Tempo(5000);
 			page.RolarPaginaPageDown();
 			page.Tempo(3000);
 			page.SetSelecionarMidia("41");
@@ -128,7 +128,9 @@ public class ProcessoMatriculaPGBoletoTest extends BaseTest {
 			page.SetQuantidadedeparcelas();
 			page.SetClicar();
 			page.SetAdicionar();
-			page.Tempo(2000);
+			page.Tempo(5000);
+			page.PageUp();
+			page.Tempo(3000);
 			page.Ajustarparcela();
 			page.Tempo(1000);
 			page.Ajustarparcelalancamento();
