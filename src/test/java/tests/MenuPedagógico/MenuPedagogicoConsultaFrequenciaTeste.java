@@ -5,7 +5,7 @@ import org.junit.Test;
 import Page.MenuPedagógico.MenuPedagogicoConsultaFrequenciaPage;
 import qa.cnabox.core.BaseTest;
 
-public class MenuPedagogicoCOnsultaFrequenciaTeste extends BaseTest {
+public class MenuPedagogicoConsultaFrequenciaTeste extends BaseTest {
 
 	MenuPedagogicoConsultaFrequenciaPage page = new MenuPedagogicoConsultaFrequenciaPage();
 

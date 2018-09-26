@@ -95,4 +95,6 @@ public class MenuPedagogicoCadastrarReservaDeSalaPage extends BasePage {
 		clicarBotaoBy(By.id("btnReservaSalaCreate"));
 		Thread.sleep(3000);
 	}
+	
+	
 }
