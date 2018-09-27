@@ -129,13 +129,15 @@ public class ProcessoMatriculaPGBoletoTest extends BaseTest {
 			page.SetClicar();
 			page.SetAdicionar();
 			page.Tempo(5000);
-			page.PageUp();
-			page.Tempo(3000);
+			page.RolarPaginaPageDown();
+			page.Tempo(2000);
 			page.Ajustarparcela();
-			page.Tempo(1000);
+			page.Tempo(2000);
+			page.RolarPagina();
+			page.Tempo(2000);
 			page.Ajustarparcelalancamento();
 			page.Tempo(1000);
-			page.RolarPagina();
+			page.PageUp();
 			page.Tempo(2000);
 			page.Adicionarajuste();
 			
