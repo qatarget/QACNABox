@@ -70,4 +70,37 @@ public class MenuPedagogicoCadastrarSegundaChamadaPage extends BasePage {
 		Thread.sleep(1000);
 		
 	}
+	
+	public void EscreveDescricao(String texto) throws InterruptedException {
+		
+		escreveTexto(By.id("Descricao"), texto);
+		Thread.sleep(1200);
+	}
+	
+	public void BtnProximo() throws InterruptedException {
+		
+		clicarBotaoBy(By.id("btnSaveStepOne"));
+		Thread.sleep(3000);
+		
+	}
+	
+	public void SetSala() throws InterruptedException {
+		
+		clicarBotaoBy(By.cssSelector("#tabela_sala_disponivel tr:nth-of-type(1) i"));
+		Thread.sleep(2000);
+	}
+	
+	public void SetProfessor() throws InterruptedException {
+		
+		clicarBotaoBy(By.cssSelector("#tabela_professor_disponivel td:nth-of-type(1) i"));
+		Thread.sleep(2000);
+	}
+	
+	public void BtnSalvar() throws InterruptedException {
+		
+		clicarBotaoBy(By.id("btnSaveAll"));
+		Thread.sleep(3000);
+	}
+	
+	
 }
