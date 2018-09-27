@@ -536,7 +536,7 @@ public class ProcessoMatriculaPGBoletoPage extends BasePage {
  		
  		public void SetresponsavelMD()throws InterruptedException {
 			
-			clicarBotaoBy(By.id("ResponsavelId"));
+			clicarBotaoBy(By.cssSelector("#lancamento-adicionar .modal-dialog .modal-content [action='\\/Lancamento\\/Save'] .modal-body.smart-form > table:nth-child(1) > tbody:nth-child(2) > tr:nth-child(6) [colspan='5'] .select.state-success #ResponsavelId"));
 			Thread.sleep(2000);
 			try {
 				Robot robot = new Robot();
@@ -546,6 +546,8 @@ public class ProcessoMatriculaPGBoletoPage extends BasePage {
 				throw new WebDriverException("VK_PAGE_DOWN", ex);
 
 			}
+			
+			clicarBotaoBy(By.cssSelector("#lancamento-adicionar tr:nth-of-type(6) [colspan]"));
 		}
  		
  		public void SetValordaparcela() throws InterruptedException{
@@ -553,12 +555,23 @@ public class ProcessoMatriculaPGBoletoPage extends BasePage {
  	 		clicarBotaoBy(By.id("ValorDaRepeticao"));
  	 		Tempo(2000);
  	 		escreveTexto(By.id("ValorDaRepeticao"), "138,33");
+ 	 		try {
+				Robot robot = new Robot();
+				robot.keyPress(KeyEvent.VK_TAB);
+				robot.keyRelease(KeyEvent.VK_TAB);
+			} catch (AWTException ex) {
+				throw new WebDriverException("VK_TAB", ex);
+
+			}
  	 	}
  		public void Setquantidadeparcela() throws InterruptedException{
  	 		
- 	 		clicarBotaoBy(By.id("NumeroRepeticoes"));
+ 	 		//clicarBotaoBy(By.xpath("/html//input[@id='NumeroRepeticoes']"));
  	 		Tempo(2000);
- 	 		escreveTexto(By.id("NumeroRepeticoes"), "6");
+ 	 		escreveTexto(By.xpath("/html//input[@id='NumeroRepeticoes']"), "6");
+ 	 		Tempo(2000);
+ 	 		
+ 	 		
  	 	}
  		
  		public void SetAdicionarMD() throws InterruptedException{
@@ -575,11 +588,13 @@ public class ProcessoMatriculaPGBoletoPage extends BasePage {
  		
  		public void Ajustarparcelalancamento() throws InterruptedException{
  	 		
- 	 		clicarBotaoBy(By.id("ValorParcela"));
+ 	 		clicarBotaoBy(By.cssSelector("#lancamento-editar #ValorParcela"));
+ 	 		Tempo(3000);
+ 	 		getDriver().findElement(By.cssSelector("#lancamento-editar #ValorParcela")).clear();
  	 		Tempo(2000);
- 	 		getDriver().findElement(By.id("ValorParcela")).clear();
- 	 		getDriver().findElement(By.id("ValorParcela")).click();
- 	 		getDriver().findElement(By.id("ValorParcela")).sendKeys("370,26");
+ 	 		getDriver().findElement(By.cssSelector("#lancamento-editar #ValorParcela")).click();
+ 	 		Tempo(2000);
+ 	 		getDriver().findElement(By.cssSelector("#lancamento-editar #ValorParcela")).sendKeys("370,26");
  	 		Tempo(2000);
  		}
  		

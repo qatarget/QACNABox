@@ -134,15 +134,16 @@ public class ProcessoMatriculaPGBoletoTest extends BaseTest {
 			page.Ajustarparcela();
 			page.Tempo(2000);
 			page.RolarPagina();
-			page.Tempo(2000);
+			page.Tempo(3000);
 			page.Ajustarparcelalancamento();
-			page.Tempo(1000);
+			page.Tempo(2000);
 			page.PageUp();
 			page.Tempo(2000);
 			page.Adicionarajuste();
-			
+			page.Tempo(2000);
+			page.PageUp();
 	//////// Material//////////////		
-			
+			page.Tempo(2000);
 			page.SetLancarmaterial();
 			page.Tempo(2000);
 			page.SetAdicionarparcelaMate();
@@ -152,13 +153,13 @@ public class ProcessoMatriculaPGBoletoTest extends BaseTest {
 			page.Setdatamaterial("01102018");
 			page.Tempo(1000);
 			page.SetAdicionarformadepagamentoMD("6");
-			page.Tempo(1000);
+			page.Tempo(2000);
 			page.SetresponsavelMD();
-			page.Tempo(1000);
+			page.Tempo(2000);
 			page.SetValordaparcela();
-			page.Tempo(1000);
+			page.Tempo(2000);
 			page.SetQuantidadedeparcelas();
-			page.Tempo(1000);
+			page.Tempo(2000);
 			page.SetAdicionarMD();
 			
 			
