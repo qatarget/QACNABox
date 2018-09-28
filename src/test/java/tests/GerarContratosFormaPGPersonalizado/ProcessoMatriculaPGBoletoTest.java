@@ -158,13 +158,22 @@ public class ProcessoMatriculaPGBoletoTest extends BaseTest {
 			page.Tempo(2000);
 			page.SetValordaparcela();
 			page.Tempo(2000);
-			page.SetQuantidadedeparcelas();
+			page.Setquantidadeparcela();
 			page.Tempo(2000);
 			page.SetAdicionarMD();
-			
-			
-			
-
+			page.Tempo(2000);
+			page.RolarPaginaPageDown();
+			page.Tempo(1000);
+			page.Ajustarparcelamaterial();
+			page.Tempo(200);
+			page.Ajustarparcelamaterial2();
+			page.Tempo(2000);
+			page.proximopassofinal();
+			page.Tempo(2000);
+			page.Concluircontratodown();
+			page.Tempo(2000);
+			page.Concluircontrato();
+			page.Tempo(3000);
 			
 		}
 	}

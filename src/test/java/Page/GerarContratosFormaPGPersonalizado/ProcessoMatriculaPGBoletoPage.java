@@ -617,7 +617,72 @@ public class ProcessoMatriculaPGBoletoPage extends BasePage {
 		}
 	}
  		
-}
+ 		public void Ajustarparcelamaterial() throws InterruptedException{
+ 			
+ 			clicarBotaoBy(By.cssSelector("#LancamentoGrid tr:nth-of-type(6) .text-center [data-toggle='modal']:nth-of-type(1)"));
+ 			Tempo(2000);
+ 			clicarBotaoBy(By.cssSelector("#lancamento-editar #ValorParcela"));
+ 			Tempo(2000);
+ 			getDriver().findElement(By.cssSelector("#lancamento-editar #ValorParcela")).clear();
+ 	 		Tempo(2000);
+ 	 		getDriver().findElement(By.cssSelector("#lancamento-editar #ValorParcela")).click();
+ 	 		Tempo(2000);
+ 	 		getDriver().findElement(By.cssSelector("#lancamento-editar #ValorParcela")).sendKeys("138,35");
+ 	 		Tempo(2000);
+ 	 		try {
+				Robot robot = new Robot();
+				robot.keyPress(KeyEvent.VK_TAB);
+				robot.keyRelease(KeyEvent.VK_TAB);
+			} catch (AWTException ex) {
+				throw new WebDriverException("VK_TAB", ex);
 
+			}
+ 		}
+ 		
+ 		public void Ajustarparcelamaterial2() throws InterruptedException{
+ 			
+ 			clicarBotaoBy(By.cssSelector("#lancamento-editar #DescontoAteVencimentoPadrao"));
+ 			Tempo(2000);
+ 			getDriver().findElement(By.cssSelector("#lancamento-editar #DescontoAteVencimentoPadrao")).sendKeys("1");
+ 			Tempo(2000);
+ 			clicarBotaoBy(By.cssSelector("#lancamento-editar .modal-footer [type='button']:nth-of-type(2)"));
+ 			Tempo(2000);
+ 		}
+ 		
+ 		
+ 		public void proximopassofinal() throws InterruptedException{
+ 			
+ 			clicarBotaoBy(By.cssSelector("#financeiro .text-center:nth-of-type(2) [type='button']:nth-of-type(2)"));
+ 			Tempo(2000);
+ 		}
+ 		
+ 		public void Concluircontratodown() throws InterruptedException{
+ 		
+ 		try {
+			Robot robot = new Robot();
+			robot.keyPress(KeyEvent.VK_PAGE_DOWN);
+			robot.keyRelease(KeyEvent.VK_PAGE_DOWN);
+			robot.keyPress(KeyEvent.VK_PAGE_DOWN);
+			robot.keyRelease(KeyEvent.VK_PAGE_DOWN);
+			robot.keyPress(KeyEvent.VK_PAGE_DOWN);
+			robot.keyRelease(KeyEvent.VK_PAGE_DOWN);
+ 		
+ 		} catch (AWTException ex) {
+			throw new WebDriverException("VK_PAGE_DOWN", ex);
+			
+		}
+ 		Tempo(2000);
+ 		clicarBotaoBy(By.cssSelector(".form-group .form-control"));
+ 		Tempo(2000);
+ 		
+		}
+ 		
+ 		public void Concluircontrato() throws InterruptedException{
+ 			
+ 			clicarBotaoBy(By.cssSelector("#resumo .text-center:nth-of-type(2) [type='button']:nth-of-type(2)"));
+ 			Tempo(2000);
+ 		}
+ 		
+}
 
 
