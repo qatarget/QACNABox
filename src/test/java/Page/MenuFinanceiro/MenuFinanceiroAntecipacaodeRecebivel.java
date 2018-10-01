@@ -65,4 +65,9 @@ public class MenuFinanceiroAntecipacaodeRecebivel extends BasePage {
 		
 	}
 	
+	public void Setclicarnasparcelas () throws InterruptedException {
+		
+		clicarBotaoBy(By.cssSelector(""));
+		
+}
 }
