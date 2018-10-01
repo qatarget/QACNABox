@@ -58,6 +58,11 @@ public class MenuFinanceiroAntecipacaodeRecebivel extends BasePage {
 		
 	}
 	
-	
+	public void clicarfiltrar() throws InterruptedException {
+		
+		clicarBotaoBy(By.cssSelector("#frmFilterCreate [type]"));
+		Thread.sleep(2000);
+		
+	}
 	
 }
