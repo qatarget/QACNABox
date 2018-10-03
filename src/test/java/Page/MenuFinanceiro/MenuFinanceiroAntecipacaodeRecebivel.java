@@ -67,7 +67,12 @@ public class MenuFinanceiroAntecipacaodeRecebivel extends BasePage {
 	
 	public void Setclicarnasparcelas () throws InterruptedException {
 		
-		clicarBotaoBy(By.cssSelector(""));
+		clicarBotaoBy(By.cssSelector("#content-movimentos .smart-form:nth-of-type(1) i"));
+		Thread.sleep(2000);
+		clicarBotaoBy(By.cssSelector("#content-movimentos .smart-form:nth-of-type(2) i"));
+		Thread.sleep(2000);
 		
 }
+	
+	
 }
